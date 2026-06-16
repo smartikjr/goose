@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('preloader').classList.add('hidden');
     initFloatingCards();
-    animateStats();
   }, 1800);
 });
 
@@ -52,7 +51,6 @@ const mobileMenu = document.getElementById('mobileMenu');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) navbar.classList.add('scrolled');
   else navbar.classList.remove('scrolled');
-
   document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
 });
 
@@ -91,53 +89,51 @@ function initFloatingCards() {
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 revealEls.forEach(el => revealObserver.observe(el));
 
-// ===== STATS COUNTER =====
-function animateStats() {
-  const nums = document.querySelectorAll('.stat-num');
-  nums.forEach(el => {
-    const target = parseInt(el.dataset.target);
-    let current = 0;
-    const step = target / 60;
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current);
-      if (current >= target) clearInterval(timer);
-    }, 25);
-  });
+// ===== COUNTDOWN — next tournament from weekly schedule =====
+const schedule = [
+  { day: 1, hour: 19, name: 'GOOSE CLASSIC (Пн)' },
+  { day: 2, hour: 19, name: 'GOOSE HUNTER (Вт)' },
+  { day: 3, hour: 19, name: 'GOOSE CLASSIC (Ср)' },
+  { day: 4, hour: 19, name: 'MYSTERY BOUNTY (Чт)' },
+  { day: 5, hour: 19, name: 'GOOSE DEEPSTACK (Пт)' },
+  { day: 6, hour: 17, name: 'WIN THE BUTTON (Сб)' },
+  { day: 0, hour: 17, name: 'GOOSE BATTERY (Вс)' },
+];
+
+function getNextTournament() {
+  const now = new Date();
+  let bestTime = null;
+  let bestName = '';
+  for (const s of schedule) {
+    const t = new Date(now);
+    const daysUntil = (s.day - now.getDay() + 7) % 7;
+    t.setDate(now.getDate() + daysUntil);
+    t.setHours(s.hour, 0, 0, 0);
+    if (t <= now) t.setDate(t.getDate() + 7);
+    if (!bestTime || t < bestTime) { bestTime = t; bestName = s.name; }
+  }
+  return { time: bestTime, name: bestName };
 }
 
-// Trigger stats again when hero is visible
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) animateStats();
-  });
-}, { threshold: 0.5 });
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
-
-// ===== COUNTDOWN =====
 function updateCountdown() {
-  const now = new Date();
-  const nextFriday = new Date();
-  nextFriday.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7 || 7));
-  nextFriday.setHours(19, 0, 0, 0);
-  const diff = nextFriday - now;
+  const { time, name } = getNextTournament();
+  const diff = time - new Date();
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  const label = document.getElementById('countdownLabel');
+  if (label) label.textContent = `⚡ До ${name}:`;
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
@@ -180,8 +176,8 @@ gameCard.addEventListener('click', showSticker);
 stickerBtn.addEventListener('click', showSticker);
 
 // ===== POKER MINI GAME =====
-const suits = ['♠','♥','♣','♦'];
-const ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+const suits = ['♠', '♥', '♣', '♦'];
+const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
 function createDeck() {
   const deck = [];
@@ -200,14 +196,14 @@ function renderCard(slot, card) {
 
 function evaluateHand(cards) {
   const rankValues = { '2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':11,'Q':12,'K':13,'A':14 };
-  const ranks = cards.map(c => rankValues[c.rank]).sort((a,b) => a-b);
-  const suits = cards.map(c => c.suit);
+  const rv = cards.map(c => rankValues[c.rank]).sort((a, b) => a - b);
+  const sv = cards.map(c => c.suit);
   const rankCount = {};
-  ranks.forEach(r => rankCount[r] = (rankCount[r]||0)+1);
-  const counts = Object.values(rankCount).sort((a,b) => b-a);
-  const isFlush = suits.every(s => s === suits[0]) && cards.length >= 5;
-  const isStraight = ranks.length >= 5 && ranks[ranks.length-1] - ranks[0] === ranks.length-1 && new Set(ranks).size === ranks.length;
-  if (isFlush && isStraight && ranks.includes(14)) return '🏆 Роял-флеш! Легенда!';
+  rv.forEach(r => rankCount[r] = (rankCount[r] || 0) + 1);
+  const counts = Object.values(rankCount).sort((a, b) => b - a);
+  const isFlush = sv.every(s => s === sv[0]) && cards.length >= 5;
+  const isStraight = rv.length >= 5 && rv[rv.length - 1] - rv[0] === rv.length - 1 && new Set(rv).size === rv.length;
+  if (isFlush && isStraight && rv.includes(14)) return '🏆 Роял-флеш! Легенда!';
   if (isFlush && isStraight) return '🌟 Стрит-флеш! Невероятно!';
   if (counts[0] === 4) return '💥 Каре! Мощный удар!';
   if (counts[0] === 3 && counts[1] === 2) return '🔥 Фулл-хаус! Отлично!';
@@ -221,10 +217,9 @@ function evaluateHand(cards) {
 
 const dealBtn = document.getElementById('dealBtn');
 const resetBtn = document.getElementById('resetBtn');
-let deck = [];
 
 dealBtn.addEventListener('click', () => {
-  deck = createDeck();
+  const deck = createDeck();
   const communitySlots = document.querySelectorAll('#communityCards .table-card-slot');
   const handSlots = document.querySelectorAll('#yourHand .hand-slot');
 
@@ -233,55 +228,31 @@ dealBtn.addEventListener('click', () => {
   document.getElementById('tableResult').textContent = '';
 
   const dealt = deck.splice(0, 7);
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < 5) {
-      setTimeout(() => renderCard(communitySlots[i], dealt[i]), i * 150);
-    } else {
-      setTimeout(() => renderCard(handSlots[i-5], dealt[i]), (i) * 150);
-    }
-    i++;
-    if (i >= 7) {
-      clearInterval(interval);
-      setTimeout(() => {
-        document.getElementById('tableResult').textContent = evaluateHand(dealt);
-        resetBtn.style.display = 'inline-flex';
-        dealBtn.style.display = 'none';
-      }, 1200);
-    }
-  }, 150);
+  const allSlots = [...communitySlots, ...handSlots];
+
+  allSlots.forEach((slot, idx) => {
+    setTimeout(() => {
+      renderCard(slot, dealt[idx]);
+      if (idx === allSlots.length - 1) {
+        setTimeout(() => {
+          document.getElementById('tableResult').textContent = evaluateHand(dealt);
+          resetBtn.style.display = 'inline-flex';
+          dealBtn.style.display = 'none';
+        }, 400);
+      }
+    }, idx * 200);
+  });
 });
 
 resetBtn.addEventListener('click', () => {
-  document.querySelectorAll('.table-card-slot').forEach(s => { s.textContent = ''; s.className = s.classList.contains('hand-slot') ? 'table-card-slot hand-slot' : 'table-card-slot'; });
+  document.querySelectorAll('.table-card-slot').forEach(s => {
+    s.textContent = '';
+    s.className = s.classList.contains('hand-slot') ? 'table-card-slot hand-slot' : 'table-card-slot';
+  });
   document.getElementById('tableResult').textContent = '';
   resetBtn.style.display = 'none';
   dealBtn.style.display = 'inline-flex';
 });
-
-// ===== TESTIMONIALS SLIDER =====
-const track = document.getElementById('testimonialsTrack');
-const cards = track.querySelectorAll('.testimonial-card');
-const dotsContainer = document.getElementById('sliderDots');
-let currentSlide = 0;
-
-cards.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-  dot.addEventListener('click', () => goToSlide(i));
-  dotsContainer.appendChild(dot);
-});
-
-function goToSlide(n) {
-  currentSlide = (n + cards.length) % cards.length;
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-}
-
-document.getElementById('sliderPrev').addEventListener('click', () => goToSlide(currentSlide - 1));
-document.getElementById('sliderNext').addEventListener('click', () => goToSlide(currentSlide + 1));
-
-setInterval(() => goToSlide(currentSlide + 1), 5000);
 
 // ===== LEVEL BUTTONS =====
 document.querySelectorAll('.level-btn').forEach(btn => {
@@ -315,6 +286,6 @@ window.addEventListener('scroll', () => {
   const hero = document.getElementById('hero');
   const y = window.scrollY;
   hero.style.backgroundPositionY = `${y * 0.3}px`;
-  const cards = document.querySelector('.hero-cards-showcase');
-  if (cards) cards.style.transform = `translateY(calc(-50% + ${y * 0.15}px))`;
+  const showcase = document.querySelector('.hero-cards-showcase');
+  if (showcase) showcase.style.transform = `translateY(calc(-50% + ${y * 0.15}px))`;
 });

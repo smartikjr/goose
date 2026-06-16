@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GOOSE Poker Club — Покерный клуб нового уровня</title>
+  <title>GOOSE Poker Club — Покерный клуб в Санкт-Петербурге</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- PRELOADER -->
 <div id="preloader">
   <div class="preloader-inner">
     <div class="goose-logo-anim">G</div>
@@ -24,33 +23,31 @@
   </div>
 </div>
 
-<!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-trail" id="cursorTrail"></div>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <span class="logo-g">G</span>OOSE
-    </a>
+    <a href="#hero" class="nav-logo"><span class="logo-g">G</span>OOSE</a>
     <ul class="nav-links">
       <li><a href="#about">О клубе</a></li>
-      <li><a href="#tournaments">Турниры</a></li>
-      <li><a href="#features">Фишки</a></li>
-      <li><a href="#gallery">Галерея</a></li>
+      <li><a href="#tournaments">Расписание</a></li>
+      <li><a href="#bonuses">Бонусы</a></li>
+      <li><a href="#rating">Рейтинг</a></li>
+      <li><a href="#features">Стикеры</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Вступить в клуб</a>
+    <a href="https://t.me/goosespb_admin" target="_blank" class="nav-cta">Записаться</a>
     <button class="burger" id="burger" aria-label="меню">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" class="mm-link">О клубе</a>
-    <a href="#tournaments" class="mm-link">Турниры</a>
-    <a href="#features" class="mm-link">Фишки</a>
-    <a href="#gallery" class="mm-link">Галерея</a>
+    <a href="#tournaments" class="mm-link">Расписание</a>
+    <a href="#bonuses" class="mm-link">Бонусы</a>
+    <a href="#rating" class="mm-link">Рейтинг</a>
+    <a href="#features" class="mm-link">Стикеры</a>
     <a href="#contact" class="mm-link">Контакты</a>
   </div>
 </nav>
@@ -59,37 +56,28 @@
 <section id="hero">
   <div class="hero-bg">
     <div class="felt-grid"></div>
-    <div class="chips-bg"></div>
   </div>
   <div class="floating-cards" id="floatingCards"></div>
   <div class="hero-content">
-    <div class="hero-badge reveal">Покерный клуб #1 в городе</div>
+    <div class="hero-badge reveal">СПб · М. Площадь Ленина · 18+</div>
     <h1 class="hero-title reveal">
       <span class="hero-g">G</span>OOSE<br/>
       <span class="hero-sub">POKER CLUB</span>
     </h1>
     <p class="hero-desc reveal">
-      Здесь гогочут победители.<br/>Ты следующий?
+      Покер без денег — зато с характером.<br/>
+      Рейтинг, турниры, своя атмосфера.
     </p>
     <div class="hero-buttons reveal">
-      <a href="#tournaments" class="btn-primary">Играть сейчас</a>
-      <a href="#about" class="btn-ghost">Узнать больше</a>
+      <a href="#tournaments" class="btn-primary">Смотреть расписание</a>
+      <a href="https://t.me/goosepoker" target="_blank" class="btn-ghost">Telegram-канал</a>
     </div>
-    <div class="hero-stats reveal">
-      <div class="stat">
-        <span class="stat-num" data-target="500">0</span>+
-        <span class="stat-label">Игроков</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-target="120">0</span>+
-        <span class="stat-label">Турниров</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-target="3">0</span>
-        <span class="stat-label">Года</span>
-      </div>
+    <div class="hero-perks reveal">
+      <div class="perk-item">🆓 Фриролл каждый день</div>
+      <div class="perk-sep"></div>
+      <div class="perk-item">📊 Рейтинговая система</div>
+      <div class="perk-sep"></div>
+      <div class="perk-item">🏆 Чемпионат месяца</div>
     </div>
   </div>
   <div class="hero-cards-showcase">
@@ -98,29 +86,29 @@
     <div class="showcase-card sc3">Q♣</div>
   </div>
   <div class="scroll-indicator">
-    <span>Листай вниз</span>
+    <span>Вниз</span>
     <div class="scroll-arrow"></div>
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
     <span>🃏 GOOSE POKER CLUB</span>
-    <span>♠ КОМАНДНЫЙ ТУРНИР 2×2</span>
-    <span>♥ ГОГОЧУЩАЯ БАТАРЕЙКА</span>
-    <span>♣ НАКАЛ СТРАСТЕЙ</span>
-    <span>♦ КРУТИТЬ ДВАЖДЫ</span>
+    <span>♠ GOOSE CLASSIC</span>
+    <span>♥ GOOSE HUNTER</span>
+    <span>♣ MYSTERY BOUNTY</span>
+    <span>♦ GOOSE DEEPSTACK</span>
+    <span>🦆 WIN THE BUTTON</span>
+    <span>⚡ GOOSE BATTERY</span>
+    <span>🏆 ЧЕМПИОНАТ МЕСЯЦА</span>
     <span>🃏 GOOSE POKER CLUB</span>
-    <span>♠ КОМАНДНЫЙ ТУРНИР 2×2</span>
-    <span>♥ ГОГОЧУЩАЯ БАТАРЕЙКА</span>
-    <span>♣ НАКАЛ СТРАСТЕЙ</span>
-    <span>♦ КРУТИТЬ ДВАЖДЫ</span>
-    <span>🃏 GOOSE POKER CLUB</span>
-    <span>♠ КОМАНДНЫЙ ТУРНИР 2×2</span>
-    <span>♥ ГОГОЧУЩАЯ БАТАРЕЙКА</span>
-    <span>♣ НАКАЛ СТРАСТЕЙ</span>
-    <span>♦ КРУТИТЬ ДВАЖДЫ</span>
+    <span>♠ GOOSE CLASSIC</span>
+    <span>♥ GOOSE HUNTER</span>
+    <span>♣ MYSTERY BOUNTY</span>
+    <span>♦ GOOSE DEEPSTACK</span>
+    <span>🦆 WIN THE BUTTON</span>
+    <span>⚡ GOOSE BATTERY</span>
+    <span>🏆 ЧЕМПИОНАТ МЕСЯЦА</span>
   </div>
 </div>
 
@@ -128,33 +116,41 @@
 <section id="about">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-tag">О нас</span>
-      <h2>Место, где рождаются<br/><em>легенды покера</em></h2>
+      <span class="section-tag">О клубе</span>
+      <h2>Добро пожаловать<br/><em>в Джи-Джи</em></h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>GOOSE Poker Club — это не просто клуб. Это сообщество, где каждый сдача карт превращается в историю. Мы создали пространство, где профи и любители встречаются за одним столом и создают незабываемые моменты.</p>
-        <p>Наши фирменные стикеры — «Гнида», «Покажи карту», «Крутить дважды» — стали символами честной игры и хорошего настроения. У нас не заскучаешь.</p>
+        <p>GOOSE — это покерный клуб без денежных ставок и без денежных призов. Игра ведётся за рейтинговые очки. Это важно: у нас приходят за кайфом от игры, а не за кошельком соседа.</p>
+        <p>Светлый зал с панорамными окнами, 6 столов, рабочий бар с закусками, бесплатная парковка и 30 секунд от метро «Площадь Ленина». Каждый вечер — свой турнир, своя история.</p>
+        <p>Можешь прийти совсем без опыта — фриролл доступен всем. Можешь прийти за рейтингом — мейн-ивент в воскресенье ждёт.</p>
         <div class="about-features">
           <div class="af-item">
             <span class="af-icon">🎰</span>
             <div>
-              <strong>Профессиональные столы</strong>
-              <span>Настоящий покерный опыт</span>
+              <strong>6 покерных столов</strong>
+              <span>Новые, полноценные, с профессиональным покрытием</span>
             </div>
           </div>
           <div class="af-item">
-            <span class="af-icon">🦆</span>
+            <span class="af-icon">📊</span>
             <div>
-              <strong>Сообщество GOOSE</strong>
-              <span>500+ активных игроков</span>
+              <strong>Рейтинговая система</strong>
+              <span>Открытая таблица — каждый видит своё место</span>
             </div>
           </div>
           <div class="af-item">
-            <span class="af-icon">🏆</span>
+            <span class="af-icon">🆓</span>
             <div>
-              <strong>Регулярные турниры</strong>
-              <span>Каждую неделю новый формат</span>
+              <strong>Фриролл каждый вечер</strong>
+              <span>Вход бесплатный — приходи и играй</span>
+            </div>
+          </div>
+          <div class="af-item">
+            <span class="af-icon">🚇</span>
+            <div>
+              <strong>30 секунд от метро</strong>
+              <span>М. Площадь Ленина, ТК ТуКан, 2 этаж</span>
             </div>
           </div>
         </div>
@@ -180,75 +176,180 @@
   </div>
 </section>
 
-<!-- TOURNAMENTS -->
+<!-- WEEKLY SCHEDULE -->
 <section id="tournaments">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-tag">Турниры</span>
-      <h2>Играй. Побеждай.<br/><em>Гогочи.</em></h2>
-    </div>
-    <div class="tournaments-grid">
-
-      <div class="t-card reveal t-featured">
-        <div class="t-badge">🔥 Горячий</div>
-        <div class="t-icon">🦆</div>
-        <h3>Гогочущая Батарейка</h3>
-        <p class="t-desc">Заряди себя победой! Уникальный формат с энергетическими бонусами и двойными ставками.</p>
-        <div class="t-details">
-          <div class="t-detail"><span>📅</span> Каждую пятницу</div>
-          <div class="t-detail"><span>⏰</span> 19:00</div>
-          <div class="t-detail"><span>💰</span> Buy-in от 500₽</div>
-          <div class="t-detail"><span>👥</span> До 30 игроков</div>
-        </div>
-        <div class="t-prize">
-          <span class="prize-label">Призовой фонд</span>
-          <span class="prize-amount">до 15 000₽</span>
-        </div>
-        <a href="#contact" class="btn-primary t-btn">Зарегистрироваться</a>
-      </div>
-
-      <div class="t-card reveal">
-        <div class="t-badge t-badge-blue">⚔️ Командный</div>
-        <div class="t-icon">🤝</div>
-        <h3>Турнир 2×2</h3>
-        <p class="t-desc">Командный покер — найди напарника и вместе поднимите банк! Накал страстей гарантирован.</p>
-        <div class="t-details">
-          <div class="t-detail"><span>📅</span> Каждую субботу</div>
-          <div class="t-detail"><span>⏰</span> 17:00</div>
-          <div class="t-detail"><span>💰</span> Buy-in от 800₽</div>
-          <div class="t-detail"><span>👥</span> 8 команд</div>
-        </div>
-        <div class="t-prize">
-          <span class="prize-label">Призовой фонд</span>
-          <span class="prize-amount">до 20 000₽</span>
-        </div>
-        <a href="#contact" class="btn-primary t-btn">Зарегистрироваться</a>
-      </div>
-
-      <div class="t-card reveal">
-        <div class="t-badge t-badge-gold">⭐ Легенда</div>
-        <div class="t-icon">💀</div>
-        <h3>Ящик Пандоры</h3>
-        <p class="t-desc">Не знаешь что внутри? Тайный формат турнира — правила раскрываются за столом. Только для смелых.</p>
-        <div class="t-details">
-          <div class="t-detail"><span>📅</span> 1 раз в месяц</div>
-          <div class="t-detail"><span>⏰</span> 20:00</div>
-          <div class="t-detail"><span>💰</span> Buy-in от 1000₽</div>
-          <div class="t-detail"><span>👥</span> Лимит 20 мест</div>
-        </div>
-        <div class="t-prize">
-          <span class="prize-label">Призовой фонд</span>
-          <span class="prize-amount">до 30 000₽</span>
-        </div>
-        <a href="#contact" class="btn-primary t-btn">Хочу участвовать</a>
-      </div>
-
+      <span class="section-tag">Расписание</span>
+      <h2>7 турниров<br/><em>каждую неделю</em></h2>
+      <p>Каждый вечер — новый формат. Начало сбора гостей за 30 минут до старта.</p>
     </div>
 
-    <!-- COUNTDOWN -->
+    <div class="week-grid">
+
+      <div class="week-day reveal">
+        <div class="wd-header">
+          <span class="wd-day">ПН</span>
+          <span class="wd-time">19:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>GOOSE CLASSIC</h3>
+          <p>Классика с глубокой структурой — бесплатный вход или платный со стэком 30к.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Фриролл</span>
+            <span class="tag tag-rating">100% рейтинг</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🃏 Стэк: 10к (0₽) или 30к (1000₽)</div>
+            <div class="wdd">🔄 Re-entry без ограничений</div>
+            <div class="wdd">💊 Аддон: 60к за 1000₽</div>
+            <div class="wdd">🕙 Поздняя рег. до 22:00</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day reveal">
+        <div class="wd-header">
+          <span class="wd-day">ВТ</span>
+          <span class="wd-time">19:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>GOOSE HUNTER</h3>
+          <p class="wd-sub">меткий стрелок</p>
+          <p>Нокаут-турнир — бонусные очки в рейтинг за каждого выбитого игрока.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Фриролл</span>
+            <span class="tag tag-ko">Нокаут</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">💥 +50 очков за нокаут</div>
+            <div class="wdd">🎯 +100 очков после поздней рег.</div>
+            <div class="wdd">🃏 Стэк: 10к (0₽) или 30к (1000₽)</div>
+            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day reveal">
+        <div class="wd-header">
+          <span class="wd-day">СР</span>
+          <span class="wd-time">19:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>GOOSE CLASSIC</h3>
+          <p class="wd-sub">полный фриролл</p>
+          <p>Бесплатный вход для всех — стэк 30к. Никаких ограничений.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Бесплатный вход</span>
+            <span class="tag tag-rating">100% рейтинг</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🃏 Стэк: 30к (0₽)</div>
+            <div class="wdd">🔄 Re-entry: 1000₽</div>
+            <div class="wdd">💊 Аддон: 60к за 1000₽</div>
+            <div class="wdd">🕙 Поздняя рег. до 22:00</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day reveal">
+        <div class="wd-header">
+          <span class="wd-day">ЧТ</span>
+          <span class="wd-time">19:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>MYSTERY BOUNTY</h3>
+          <p>Тайные карточки за каждого выбитого игрока. Что внутри — узнаешь только после нокаута.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Фриролл</span>
+            <span class="tag tag-mystery">Mystery</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🎁 Призы: очки, бар, стэки, входы</div>
+            <div class="wdd">🃏 Стэк: 0₽ вход</div>
+            <div class="wdd">🔄 Re-entry: 1000₽</div>
+            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day wd-featured reveal">
+        <div class="wd-hot-badge">🔥 Пятница</div>
+        <div class="wd-header">
+          <span class="wd-day">ПТ</span>
+          <span class="wd-time">19:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>GOOSE DEEPSTACK</h3>
+          <p>Увеличенный стартовый стэк — больше пространства для маневра. Стратегия важнее удачи.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Фриролл</span>
+            <span class="tag tag-deep">Дипстэк</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🃏 Стэк: 40к (0₽)</div>
+            <div class="wdd">💊 Аддон: 100к за 1000₽</div>
+            <div class="wdd">🔄 Re-entry: 40к за 1000₽</div>
+            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day reveal">
+        <div class="wd-header">
+          <span class="wd-day">СБ</span>
+          <span class="wd-time">17:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>WIN THE BUTTON</h3>
+          <p>Выиграл раздачу — остаёшься на кнопке дилера. Меняет всю привычную динамику за столом.</p>
+          <div class="wd-tags">
+            <span class="tag tag-free">Фриролл</span>
+            <span class="tag tag-special">Спецформат</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🎯 Победитель раздачи = кнопка</div>
+            <div class="wdd">🃏 Стэк: 30к (0₽)</div>
+            <div class="wdd">🔄 Re-entry: 1000₽</div>
+            <div class="wdd">🕙 Поздняя рег. до 20:00</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+      <div class="week-day wd-main-event reveal">
+        <div class="wd-hot-badge wd-badge-blue">⚡ Мейн-ивент</div>
+        <div class="wd-header">
+          <span class="wd-day">ВС</span>
+          <span class="wd-time">17:00</span>
+        </div>
+        <div class="wd-body">
+          <h3>GOOSE BATTERY</h3>
+          <p>Финальный турнир недели. Собирал стэки всю неделю на других турнирах? Приноси их сюда.</p>
+          <div class="wd-tags">
+            <span class="tag tag-main">Мейн-ивент</span>
+            <span class="tag tag-x2">×2 рейтинг</span>
+          </div>
+          <div class="wd-details">
+            <div class="wdd">🃏 Стэк: 30к (1000₽) или 60к (1500₽)</div>
+            <div class="wdd">🏆 Победитель: ×2 рейтинг + 3 входа</div>
+            <div class="wdd">⏳ Уровни: 20/12 мин</div>
+            <div class="wdd">🕙 Поздняя рег. до 19:40</div>
+          </div>
+        </div>
+        <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
+      </div>
+
+    </div>
+
     <div class="countdown-block reveal">
-      <p class="cd-label">⚡ До следующего турнира «Гогочущая Батарейка»:</p>
-      <div class="countdown" id="countdown">
+      <p class="cd-label" id="countdownLabel">⚡ До следующего турнира:</p>
+      <div class="countdown">
         <div class="cd-item"><span id="cd-d">00</span><label>дней</label></div>
         <div class="cd-sep">:</div>
         <div class="cd-item"><span id="cd-h">00</span><label>часов</label></div>
@@ -258,58 +359,186 @@
         <div class="cd-item"><span id="cd-s">00</span><label>секунд</label></div>
       </div>
     </div>
+
+    <div class="common-rules reveal">
+      <h3>Общее для всех турниров</h3>
+      <div class="rules-grid">
+        <div class="rule-item">
+          <span>⏳</span>
+          <p>Уровни: 17/12 мин (кроме Battery — 20/12)</p>
+        </div>
+        <div class="rule-item">
+          <span>📊</span>
+          <p>Очки: 100% рейтинг за каждый турнир</p>
+        </div>
+        <div class="rule-item">
+          <span>🃏</span>
+          <p>Блайнды: 100/100/100 — SB/BB/Ante</p>
+        </div>
+        <div class="rule-item">
+          <span>☕</span>
+          <p>Перерыв каждые 1.5 часа</p>
+        </div>
+        <div class="rule-item">
+          <span>❗</span>
+          <p>Игра без денежных призов. 18+</p>
+        </div>
+        <div class="rule-item">
+          <span>♥️♦️</span>
+          <p>Рука клуба: выиграй с карманной парой 22 → +22 ББ</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- STICKERS / FEATURES -->
+<!-- BONUSES -->
+<section id="bonuses">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Бонусы</span>
+      <h2>Как получить<br/><em>больше фишек</em></h2>
+      <p>Действуют почти на всех турнирах — приходи, заказывай, играй вовремя.</p>
+    </div>
+    <div class="bonuses-grid">
+      <div class="bonus-card reveal">
+        <span class="bonus-icon">🏃</span>
+        <h3>Ранний гусь</h3>
+        <div class="bonus-reward">+5 000 к стэку</div>
+        <p>Первые 10 зарегистрировавшихся на турнир получают бонус к стартовому стэку. Записывайся заранее в @goosespb_admin.</p>
+      </div>
+      <div class="bonus-card reveal">
+        <span class="bonus-icon">🎩</span>
+        <h3>Вежливый гусь</h3>
+        <div class="bonus-reward">+5 000 к стэку</div>
+        <p>Пришёл вовремя — получи бонус. Клуб ценит пунктуальных. Опоздал — сам виноват.</p>
+      </div>
+      <div class="bonus-card reveal">
+        <span class="bonus-icon">🍺</span>
+        <h3>Голодный гусь</h3>
+        <div class="bonus-reward">+2 000 к стэку</div>
+        <p>Сделай заказ на баре (кроме воды) — получи дополнительные фишки. Пей, ешь, играй.</p>
+      </div>
+      <div class="bonus-card reveal bonus-card-special">
+        <span class="bonus-icon">♥️♦️</span>
+        <h3>Рука клуба</h3>
+        <div class="bonus-reward">+22 ББ к стэку</div>
+        <p>Выиграй раздачу с карманной парой 22 (до периода поздней регистрации). Засчитывается если раздача дошла до флопа — блеф префлопом не считается.</p>
+      </div>
+      <div class="bonus-card reveal">
+        <span class="bonus-icon">🎰</span>
+        <h3>Бонус дилера</h3>
+        <div class="bonus-reward">Вход + 5к каждые 2ч</div>
+        <p>Умеешь и хочешь раздавать? Получаешь бесплатный повторный вход каждые 2 часа и +5000 к стартовому стэку.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<section id="rating">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Рейтинг</span>
+      <h2>Живая таблица<br/><em>лидеров</em></h2>
+      <p>Каждый турнир — очки в рейтинг. Каждое место в таблице — результат реальной игры.</p>
+    </div>
+    <div class="rating-grid">
+      <div class="rating-info reveal">
+        <div class="ri-card">
+          <div class="ri-item">
+            <span class="ri-icon">📊</span>
+            <div>
+              <strong>Как считается</strong>
+              <p>100% рейтинговых очков за каждый турнир. Итоговое место определяет количество очков. В нокаут-форматах — дополнительные очки за каждый нокаут.</p>
+            </div>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">⚡</span>
+            <div>
+              <strong>Goose Battery</strong>
+              <p>Воскресный мейн-ивент даёт ×2 к рейтингу. Победитель дополнительно получает 3 бесплатных входа на будущие турниры.</p>
+            </div>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">🎯</span>
+            <div>
+              <strong>Нокаут-бонусы</strong>
+              <p>GOOSE HUNTER: +50 очков за нокаут. +100 очков за нокаут после поздней регистрации.</p>
+            </div>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1QBpeFepOObPwMPWRxzp9ABO9STnwL7jARgJr5oua-fk/edit" target="_blank" class="btn-primary" style="margin-top:1.5rem; display:inline-flex;">
+            📊 Открыть таблицу рейтинга
+          </a>
+        </div>
+      </div>
+      <div class="monthly-champ reveal">
+        <div class="mc-card">
+          <div class="mc-crown">🏆</div>
+          <h3>Чемпионат месяца</h3>
+          <p class="mc-desc">В конце каждого месяца топ-30 игроков рейтинговой таблицы встречаются в финальном турнире.</p>
+          <div class="mc-list">
+            <div class="mc-item"><span>👥</span> Топ-30 по рейтингу за месяц</div>
+            <div class="mc-item"><span>📅</span> Раз в месяц, ближе к концу</div>
+            <div class="mc-item"><span>🥇</span> Звание чемпиона месяца</div>
+            <div class="mc-item"><span>🎁</span> Специальные призы победителю</div>
+            <div class="mc-item"><span>🦆</span> Попасть может любой — накапливай очки</div>
+          </div>
+          <div class="mc-cta">Войди в топ-30 таблицы!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKERS -->
 <section id="features">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-tag">Фишки клуба</span>
-      <h2>Наши легендарные<br/><em>стикеры</em></h2>
-      <p>Фирменные метки GOOSE — часть игры. Получи стикер — прими вызов!</p>
+      <h2>Фирменные<br/><em>стикеры GOOSE</em></h2>
+      <p>Часть культуры клуба. Получи стикер — прими вызов.</p>
     </div>
     <div class="stickers-grid">
-      <div class="sticker-card reveal" data-color="crimson">
+      <div class="sticker-card reveal">
         <div class="sticker-visual sticker-red">
           <span class="sticker-g">G</span>
           <strong>ГНИДА</strong>
         </div>
         <h3>Гнида</h3>
-        <p>Сыграл осторожно, когда все ждали блефа? Получи стикер «Гнида» и носи с гордостью. Осторожность — тоже стратегия.</p>
-        <div class="sticker-rule">Правило: получи — значит тебя заметили</div>
+        <p>Сложил руку там, где все ждали блефа? Поздравляем — ты нит. Осторожность тоже стратегия, хотя и скучная.</p>
+        <div class="sticker-rule">Получи — значит тебя заметили</div>
       </div>
-      <div class="sticker-card reveal" data-color="orange">
+      <div class="sticker-card reveal">
         <div class="sticker-visual sticker-orange">
           <span class="sticker-g">G</span>
           <strong>ПОКАЖИ<br/>КАРТУ</strong>
         </div>
         <h3>Покажи карту</h3>
-        <p>Сорвал банк без вскрытия? Зал требует шоу! Стикер «Покажи карту» — жаждем раскрытия твоего мастерства.</p>
-        <div class="sticker-rule">Правило: покажи — и стань легендой</div>
+        <p>Сорвал банк без вскрытия? Зал требует шоу. Покажи что было — стань героем или злодеем вечера.</p>
+        <div class="sticker-rule">Покажи — и стань легендой стола</div>
       </div>
-      <div class="sticker-card reveal" data-color="green">
+      <div class="sticker-card reveal">
         <div class="sticker-visual sticker-green">
           <span class="sticker-g">G</span>
           <strong>КРУТИТЬ<br/>ДВАЖДЫ</strong>
         </div>
         <h3>Крутить дважды</h3>
-        <p>Удача на твоей стороне? Двойной спин — двойной шанс! Самый желанный стикер для смельчаков.</p>
-        <div class="sticker-rule">Правило: используй в нужный момент</div>
+        <p>Ол-ин и рансаут — два раза. Удача на твоей стороне? Проверим.</p>
+        <div class="sticker-rule">Используй в самый нужный момент</div>
       </div>
     </div>
 
-    <!-- INTERACTIVE STICKER GAME -->
     <div class="sticker-game reveal">
-      <h3>🎲 Получи свой стикер на сегодня!</h3>
-      <p>Нажми на карту и узнай, какой стикер ты заслужил</p>
+      <h3>🎲 Какой стикер ты получишь сегодня?</h3>
+      <p>Нажми на карту — узнай</p>
       <div class="game-card" id="stickerGame">
         <div class="game-card-inner">
           <div class="game-card-front">
             <span class="card-question">?</span>
             <span class="card-hint">Нажми чтобы открыть</span>
           </div>
-          <div class="game-card-back" id="stickerResult">
+          <div class="game-card-back">
             <span class="result-icon">🎰</span>
             <span class="result-text"></span>
           </div>
@@ -320,12 +549,47 @@
   </div>
 </section>
 
+<!-- POKER GAME -->
+<section id="table-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Интерактив</span>
+      <h2>Раздай себе<br/><em>карты</em></h2>
+      <p>5 общих карт + 2 твои. Смотри что получилось.</p>
+    </div>
+    <div class="poker-table reveal">
+      <div class="table-felt">
+        <div class="community-label">Общие карты (борд)</div>
+        <div class="community-cards" id="communityCards">
+          <div class="table-card-slot"></div>
+          <div class="table-card-slot"></div>
+          <div class="table-card-slot"></div>
+          <div class="table-card-slot"></div>
+          <div class="table-card-slot"></div>
+        </div>
+        <div class="your-hand" id="yourHand">
+          <label>Твои карты (холдем):</label>
+          <div class="hand-cards">
+            <div class="table-card-slot hand-slot"></div>
+            <div class="table-card-slot hand-slot"></div>
+          </div>
+        </div>
+        <div class="table-result" id="tableResult"></div>
+      </div>
+      <div class="table-controls">
+        <button class="btn-primary" id="dealBtn">🃏 Сдать карты</button>
+        <button class="btn-ghost" id="resetBtn" style="display:none">Новая раздача</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY -->
 <section id="gallery">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-tag">Галерея</span>
-      <h2>Атмосфера<br/><em>настоящей игры</em></h2>
+      <h2>Атмосфера<br/><em>в клубе</em></h2>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal g-large">
@@ -335,161 +599,57 @@
             <p>Командный турнир 2×2<br/>«Накал страстей»</p>
           </div>
         </div>
-        <div class="gallery-overlay">
-          <span>Командный турнир 2×2</span>
-        </div>
+        <div class="gallery-overlay"><span>Турнир 2×2</span></div>
       </div>
       <div class="gallery-item reveal">
         <div class="gallery-placeholder gp2">
           <div class="gp-content">
             <span>😎</span>
-            <p>Игрок с фирменным<br/>стикером «Гнида»</p>
+            <p>Стикер «Гнида»<br/>надет с гордостью</p>
           </div>
         </div>
-        <div class="gallery-overlay">
-          <span>Наши игроки</span>
-        </div>
+        <div class="gallery-overlay"><span>Игроки клуба</span></div>
       </div>
       <div class="gallery-item reveal">
         <div class="gallery-placeholder gp3">
           <div class="gp-content">
             <span>🏅</span>
-            <p>Фирменные стикеры<br/>клуба GOOSE</p>
+            <p>Фирменные стикеры<br/>GOOSE</p>
           </div>
         </div>
-        <div class="gallery-overlay">
-          <span>Стикеры клуба</span>
-        </div>
+        <div class="gallery-overlay"><span>Стикеры клуба</span></div>
       </div>
       <div class="gallery-item reveal">
         <div class="gallery-placeholder gp4">
           <div class="gp-content">
             <span>⚡</span>
-            <p>Турнир<br/>«Гогочущая Батарейка»</p>
+            <p>GOOSE BATTERY<br/>Воскресный мейн-ивент</p>
           </div>
         </div>
-        <div class="gallery-overlay">
-          <span>Goose Battery</span>
-        </div>
+        <div class="gallery-overlay"><span>Goose Battery</span></div>
       </div>
       <div class="gallery-item reveal">
         <div class="gallery-placeholder gp5">
           <div class="gp-content">
             <span>💀</span>
-            <p>Эмблема клуба —<br/>Ящик Пандоры</p>
+            <p>Эмблема клуба</p>
           </div>
         </div>
-        <div class="gallery-overlay">
-          <span>Символ клуба</span>
-        </div>
+        <div class="gallery-overlay"><span>Символ GOOSE</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- POKER TABLE INTERACTIVE -->
-<section id="table-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Интерактив</span>
-      <h2>Сыграй в<br/><em>мини-покер</em></h2>
-      <p>Испытай удачу прямо здесь — жми «Сдать карты»!</p>
-    </div>
-    <div class="poker-table reveal">
-      <div class="table-felt">
-        <div class="community-cards" id="communityCards">
-          <div class="table-card-slot" data-index="0"></div>
-          <div class="table-card-slot" data-index="1"></div>
-          <div class="table-card-slot" data-index="2"></div>
-          <div class="table-card-slot" data-index="3"></div>
-          <div class="table-card-slot" data-index="4"></div>
-        </div>
-        <div class="your-hand" id="yourHand">
-          <label>Твои карты:</label>
-          <div class="hand-cards">
-            <div class="table-card-slot hand-slot" data-index="0"></div>
-            <div class="table-card-slot hand-slot" data-index="1"></div>
-          </div>
-        </div>
-        <div class="table-result" id="tableResult"></div>
-      </div>
-      <div class="table-controls">
-        <button class="btn-primary" id="dealBtn">🃏 Сдать карты</button>
-        <button class="btn-ghost" id="resetBtn" style="display:none">Новая игра</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Отзывы</span>
-      <h2>Что говорят<br/><em>наши игроки</em></h2>
-    </div>
-    <div class="testimonials-slider">
-      <div class="testimonials-track" id="testimonialsTrack">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p>«Goose — это не просто покер, это целое приключение. Получил стикер "Гнида" в первую же игру и теперь горжусь этим. Атмосфера огонь!»</p>
-          <div class="t-author">
-            <div class="t-avatar">А</div>
-            <div>
-              <strong>Алексей К.</strong>
-              <span>Игрок клуба, 2 года</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p>«Командный турнир 2×2 — лучшее что я пробовал в покере. Нашёл напарника на всю жизнь и выиграл хороший банк. Goose = победа!»</p>
-          <div class="t-author">
-            <div class="t-avatar t-av2">М</div>
-            <div>
-              <strong>Максим Р.</strong>
-              <span>Чемпион турнира 2×2</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p>«"Гогочущая Батарейка" — мой любимый турнир. Каждую пятницу жду не дождусь. Организация на высшем уровне, стикеры — отдельный кайф!»</p>
-          <div class="t-author">
-            <div class="t-avatar t-av3">С</div>
-            <div>
-              <strong>Светлана В.</strong>
-              <span>Игрок клуба, 1 год</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p>«Ящик Пандоры — это страх и восторг одновременно. Тайный формат держит в напряжении до последней карты. Рекомендую всем!»</p>
-          <div class="t-author">
-            <div class="t-avatar t-av4">Д</div>
-            <div>
-              <strong>Дмитрий Н.</strong>
-              <span>VIP игрок клуба</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slider-controls">
-        <button class="slider-btn" id="sliderPrev">←</button>
-        <div class="slider-dots" id="sliderDots"></div>
-        <button class="slider-btn" id="sliderNext">→</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
+<!-- CTA -->
 <section id="cta-banner">
   <div class="cta-content reveal">
-    <h2>Готов сыграть<br/>на <em>реальные ставки?</em></h2>
-    <p>Присоединяйся к 500+ игрокам клуба GOOSE прямо сейчас</p>
-    <a href="#contact" class="btn-primary btn-large">Стать участником клуба</a>
+    <h2>Хватит читать —<br/><em>иди играть</em></h2>
+    <p>Запись у администратора. Ответит быстро.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary btn-large">Записаться через Telegram</a>
+      <a href="https://t.me/goosepoker" target="_blank" class="btn-ghost btn-large">Наш канал</a>
+    </div>
   </div>
   <div class="cta-cards">
     <div class="cta-card cc1">A♠</div>
@@ -502,7 +662,7 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-tag">Контакты</span>
-      <h2>Приходи и<br/><em>сыграй с нами</em></h2>
+      <h2>Где нас<br/><em>найти</em></h2>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
@@ -510,91 +670,102 @@
           <span class="ci-icon">📍</span>
           <div>
             <strong>Адрес</strong>
-            <span>Уточни у нас в Telegram — мы на связи 24/7</span>
+            <span>М. Площадь Ленина, Боткинская ул. 3к1, ТК ТуКан, 2 этаж</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">📱</span>
+          <span class="ci-icon">🚇</span>
           <div>
-            <strong>Telegram</strong>
-            <span>@goose_poker_club</span>
+            <strong>Как добраться</strong>
+            <span>Отдельный вход со стороны метро, или центральный вход — на эскалаторе, до конца по коридору</span>
+          </div>
+        </div>
+        <div class="ci-item">
+          <span class="ci-icon">🚗</span>
+          <div>
+            <strong>Парковка</strong>
+            <span>Бесплатная, нет платных зон — просто оставляй машину</span>
           </div>
         </div>
         <div class="ci-item">
           <span class="ci-icon">⏰</span>
           <div>
             <strong>Режим работы</strong>
-            <span>Пн–Чт: 18:00 – 02:00<br/>Пт–Вс: 16:00 – 04:00</span>
+            <span>Пн–Пт: 19:00 (сбор с 18:30)<br/>Сб–Вс: 17:00 (сбор с 16:30)</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">🃏</span>
+          <span class="ci-icon">✍️</span>
           <div>
-            <strong>Ближайший турнир</strong>
-            <span>Пятница, 19:00 — «Гогочущая Батарейка»</span>
+            <strong>Запись на турнир</strong>
+            <span>@goosespb_admin — ответит в течение дня</span>
           </div>
         </div>
         <div class="social-links">
-          <a href="#" class="social-btn">Telegram</a>
-          <a href="#" class="social-btn">Instagram</a>
-          <a href="#" class="social-btn">ВКонтакте</a>
+          <a href="https://t.me/goosepoker" target="_blank" class="social-btn">📢 Telegram канал</a>
+          <a href="https://t.me/goosespb_admin" target="_blank" class="social-btn">✍️ Записаться</a>
         </div>
       </div>
       <div class="contact-form reveal">
-        <h3>Записаться на турнир</h3>
+        <h3>Оставь заявку</h3>
+        <p class="cf-note">Заполни форму — мы напишем в Telegram.</p>
         <form id="signupForm">
           <div class="form-group">
-            <label>Имя</label>
-            <input type="text" placeholder="Твоё имя" required />
+            <label>Как тебя зовут (ник или имя)</label>
+            <input type="text" placeholder="Например: Мерси или Алексей" required />
           </div>
           <div class="form-group">
-            <label>Telegram / Телефон</label>
-            <input type="text" placeholder="@username или +7..." required />
+            <label>Telegram</label>
+            <input type="text" placeholder="@username" required />
           </div>
           <div class="form-group">
-            <label>Выбери турнир</label>
+            <label>На какой турнир хочешь?</label>
             <select>
-              <option>🦆 Гогочущая Батарейка (Пятница)</option>
-              <option>⚔️ Командный турнир 2×2 (Суббота)</option>
-              <option>💀 Ящик Пандоры (раз в месяц)</option>
-              <option>Просто хочу прийти поиграть</option>
+              <option>🃏 GOOSE CLASSIC (Пн / Ср)</option>
+              <option>💥 GOOSE HUNTER (Вт)</option>
+              <option>🎁 MYSTERY BOUNTY (Чт)</option>
+              <option>♠️ GOOSE DEEPSTACK (Пт)</option>
+              <option>🎯 WIN THE BUTTON (Сб)</option>
+              <option>⚡ GOOSE BATTERY (Вс)</option>
+              <option>Просто хочу прийти — выберу на месте</option>
             </select>
           </div>
           <div class="form-group">
             <label>Уровень игры</label>
             <div class="level-btns">
-              <button type="button" class="level-btn active" data-level="beginner">Новичок</button>
-              <button type="button" class="level-btn" data-level="medium">Любитель</button>
-              <button type="button" class="level-btn" data-level="pro">Профи</button>
+              <button type="button" class="level-btn active">Новичок</button>
+              <button type="button" class="level-btn">Любитель</button>
+              <button type="button" class="level-btn">Опытный</button>
             </div>
           </div>
-          <button type="submit" class="btn-primary w-full">Отправить заявку 🃏</button>
+          <button type="submit" class="btn-primary w-full">Отправить заявку</button>
         </form>
         <div class="form-success" id="formSuccess" style="display:none">
           <span>🎉</span>
-          <h4>Заявка принята!</h4>
-          <p>Мы свяжемся с тобой в ближайшее время. Готовься к игре!</p>
+          <h4>Заявка отправлена!</h4>
+          <p>Напишем в Telegram в ближайшее время. До встречи за столом!</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <span class="logo-g">G</span>OOSE POKER CLUB
-    </div>
+    <div class="footer-logo"><span class="logo-g">G</span>OOSE POKER CLUB</div>
     <p class="footer-tagline">Здесь гогочут победители</p>
+    <div class="footer-links">
+      <a href="https://t.me/goosepoker" target="_blank">Telegram</a>
+      <a href="https://docs.google.com/spreadsheets/d/1QBpeFepOObPwMPWRxzp9ABO9STnwL7jARgJr5oua-fk/edit" target="_blank">Рейтинг</a>
+      <a href="https://t.me/goosespb_admin" target="_blank">Записаться</a>
+    </div>
     <div class="footer-suits">♠ ♥ ♣ ♦</div>
-    <p class="footer-copy">© 2024 GOOSE Poker Club. Все права защищены.<br/>
-    Игра предназначена для лиц 18+. Играйте ответственно.</p>
+    <p class="footer-address">М. Площадь Ленина · Боткинская 3к1 · ТК ТуКан · 2 этаж</p>
+    <p class="footer-copy">© 2024 GOOSE Poker Club · Игра без денежных призов · 18+</p>
   </div>
 </footer>
 
-<!-- BACK TO TOP -->
-<button class="back-to-top" id="backToTop" aria-label="наверх">↑</button>
+<button class="back-to-top" id="backToTop">↑</button>
 
 <script src="script.js"></script>
 </body>
