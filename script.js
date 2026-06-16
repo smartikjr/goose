@@ -188,7 +188,7 @@ function createDeck() {
 function isRed(suit) { return suit === '♥' || suit === '♦'; }
 
 function renderCard(slot, card) {
-  slot.textContent = `${card.rank}${card.suit}`;
+  slot.innerHTML = `<span class="card-rank">${card.rank}</span><span class="card-suit">${card.suit}</span>`;
   slot.classList.add('dealt');
   slot.classList.toggle('red-card', isRed(card.suit));
   slot.classList.toggle('black-card', !isRed(card.suit));
@@ -246,7 +246,7 @@ dealBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
   document.querySelectorAll('.table-card-slot').forEach(s => {
-    s.textContent = '';
+    s.innerHTML = '';
     s.className = s.classList.contains('hand-slot') ? 'table-card-slot hand-slot' : 'table-card-slot';
   });
   document.getElementById('tableResult').textContent = '';
