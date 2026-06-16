@@ -594,50 +594,47 @@
     </div>
 
     <div class="atm-grid reveal">
-      <!-- Главное фото — большое, слева. Замени src на реальное фото из клуба -->
+      <!-- ФОТО 1: сохрани первое фото из чата как media/photo-gnida.jpg -->
       <div class="atm-item atm-tall">
-        <div class="atm-placeholder">
+        <img src="media/photo-gnida.jpg" class="atm-photo" alt="Игрок GOOSE со стикером Гнида"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="atm-placeholder" style="display:none">
           <div class="atm-placeholder-icon">📸</div>
-          <div class="atm-placeholder-label">Главное фото клуба<br/>замените на реальное</div>
+          <div class="atm-placeholder-label">Сохрани первое фото<br/>как media/photo-gnida.jpg</div>
         </div>
-        <!-- <img src="ССЫЛКА_НА_ФОТО" class="atm-photo" alt="Зал GOOSE Poker Club" /> -->
-        <div class="atm-caption"><span>Зал GOOSE · Боткинская 3к1</span></div>
+        <div class="atm-caption"><span>Стикер «Гнида» — носится с гордостью</span></div>
       </div>
-      <!-- Фото 2 -->
+      <!-- ФОТО 2: сохрани второе фото из чата как media/photo-stickers.jpg -->
+      <div class="atm-item">
+        <img src="media/photo-stickers.jpg" class="atm-photo" alt="Стикеры GOOSE на сукне"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="atm-placeholder" style="display:none">
+          <div class="atm-placeholder-icon">🏷️</div>
+          <div class="atm-placeholder-label">Сохрани второе фото<br/>как media/photo-stickers.jpg</div>
+        </div>
+        <div class="atm-caption"><span>Фирменные стикеры клуба</span></div>
+      </div>
+      <!-- ВИДЕО 1 -->
+      <div class="atm-item">
+        <video class="atm-photo" autoplay muted loop playsinline>
+          <source src="media/club-video-1.mov" type="video/mp4">
+        </video>
+        <div class="atm-caption"><span>Живая игра в клубе</span></div>
+      </div>
+      <!-- ВИДЕО 2 -->
+      <div class="atm-item">
+        <video class="atm-photo" autoplay muted loop playsinline>
+          <source src="media/club-video-2.mov" type="video/mp4">
+        </video>
+        <div class="atm-caption"><span>Атмосфера за столом</span></div>
+      </div>
+      <!-- Слот под дополнительное фото -->
       <div class="atm-item">
         <div class="atm-placeholder">
-          <div class="atm-placeholder-icon">🃏</div>
-          <div class="atm-placeholder-label">За покерным столом</div>
+          <div class="atm-placeholder-icon">➕</div>
+          <div class="atm-placeholder-label">Можно добавить<br/>ещё фото или видео</div>
         </div>
-        <!-- <img src="ССЫЛКА_НА_ФОТО" class="atm-photo" alt="Игра за столом" /> -->
-        <div class="atm-caption"><span>Живая игра</span></div>
-      </div>
-      <!-- Фото 3 -->
-      <div class="atm-item">
-        <div class="atm-placeholder">
-          <div class="atm-placeholder-icon">🏆</div>
-          <div class="atm-placeholder-label">Момент победы</div>
-        </div>
-        <!-- <img src="ССЫЛКА_НА_ФОТО" class="atm-photo" alt="Победитель турнира" /> -->
-        <div class="atm-caption"><span>Победитель турнира</span></div>
-      </div>
-      <!-- Фото 4 -->
-      <div class="atm-item">
-        <div class="atm-placeholder">
-          <div class="atm-placeholder-icon">🎰</div>
-          <div class="atm-placeholder-label">Фишки и стол</div>
-        </div>
-        <!-- <img src="ССЫЛКА_НА_ФОТО" class="atm-photo" alt="Покерный стол крупным планом" /> -->
-        <div class="atm-caption"><span>Крупный план</span></div>
-      </div>
-      <!-- Фото 5 -->
-      <div class="atm-item">
-        <div class="atm-placeholder">
-          <div class="atm-placeholder-icon">🦆</div>
-          <div class="atm-placeholder-label">Команда и гости</div>
-        </div>
-        <!-- <img src="ССЫЛКА_НА_ФОТО" class="atm-photo" alt="Гости клуба" /> -->
-        <div class="atm-caption"><span>Наши гости</span></div>
+        <div class="atm-caption"><span>GOOSE Poker Club</span></div>
       </div>
     </div>
 
