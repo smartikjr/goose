@@ -135,8 +135,26 @@ body:hover .cursor { opacity: 1; }
   color: var(--text);
   text-decoration: none;
   letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .logo-g { color: var(--orange); }
+.nav-goose-svg {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+.footer-goose-svg {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 .nav-links {
   display: flex; gap: 2rem;
   list-style: none;
@@ -1112,6 +1130,9 @@ footer {
   font-weight: 700;
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 .footer-tagline { color: var(--text-muted); font-style: italic; margin-bottom: 1rem; }
 .footer-suits { font-size: 1.5rem; letter-spacing: 1rem; margin-bottom: 1.5rem; color: var(--text-muted); }
