@@ -1212,6 +1212,19 @@ footer {
   letter-spacing: 0.5px;
 }
 .wd-badge-blue { background: #2980b9; }
+.wd-logo {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+.wd-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .wd-header {
   display: flex;
   justify-content: space-between;
