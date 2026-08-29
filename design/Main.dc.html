@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; }
+    a { color: #F5820A; text-decoration: none; } a:hover { color: #d06d00; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background:
+      radial-gradient(900px 600px at 78% 42%, rgba(245,130,10,0.16), transparent 60%),
+      radial-gradient(700px 700px at 12% 110%, rgba(212,160,23,0.08), transparent 60%),
+      #0a0a0a; color: #f0f0f0;">
+
+  <!-- soft vignette -->
+  <div style="position:absolute; inset:0; box-shadow: inset 0 0 260px 60px rgba(0,0,0,0.7); pointer-events:none;"></div>
+
+  <!-- ===== NAV ===== -->
+  <div style="position:absolute; top:0; left:0; right:0; height:76px; padding:0 64px;
+       display:flex; align-items:center; justify-content:space-between;
+       background: rgba(15,15,15,0.55); border-bottom:1px solid rgba(255,255,255,0.07);">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center;
+             border:1.5px solid #F5820A; border-radius:9px; color:#F5820A;">
+        <svg width="20" height="20" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 66 C20 53 34 45 49 47 C61 49 67 58 64 67 C61 74 52 76 45 73"/>
+          <path d="M24 66 C18 63 15 68 20 71"/>
+          <path d="M60 49 C62 37 64 29 73 26 C79 24 82 30 80 33 C78 36 74 37 71 34"/>
+          <path d="M80 31 l9 -2 -7 6 z" fill="currentColor" stroke="none"/>
+          <circle cx="74" cy="31" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; letter-spacing:1px;">
+        GOOSE
+      </span>
+    </div>
+    <div style="display:flex; align-items:center; gap:34px; font-size:15px; color:#b8b8b8; font-weight:500;">
+      <span>О клубе</span><span>Расписание</span><span>Бонусы</span><span>Рейтинг</span><span>Контакты</span>
+      <span style="padding:11px 22px; background:#F5820A; color:#0a0a0a; border-radius:10px; font-weight:700;
+             box-shadow:0 8px 24px rgba(245,130,10,0.35);">Записаться</span>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <div style="position:absolute; top:76px; left:0; right:0; bottom:0; padding:0 64px;
+       display:flex; align-items:center; gap:48px;">
+
+    <!-- LEFT: copy -->
+    <div style="flex:1; max-width:640px; display:flex; flex-direction:column; gap:30px;">
+
+      <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:8px;
+           padding:8px 16px; border:1px solid rgba(255,255,255,0.1); border-radius:999px;
+           background:rgba(255,255,255,0.03); font-size:13px; color:#c9c9c9; letter-spacing:0.4px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#F5820A; box-shadow:0 0 10px #F5820A;"></span>
+        СПб · М. Площадь Ленина · 18+
+      </div>
+
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:104px; line-height:0.92; letter-spacing:-2px;">
+          <span style="color:#F5820A;">G</span><span style="color:#f4f4f4;">OOSE</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:34px; letter-spacing:14px;
+             color:transparent; -webkit-text-stroke:1.3px rgba(255,255,255,0.32); margin-top:6px;">
+          POKER CLUB
+        </div>
+      </div>
+
+      <div style="font-size:20px; line-height:1.55; color:#a9a9a9; max-width:500px;">
+        Покер без денег — зато с характером.<br>Рейтинг, турниры и своя стая.
+      </div>
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="padding:16px 30px; background:#F5820A; color:#0a0a0a; border-radius:12px;
+               font-weight:700; font-size:16px; box-shadow:0 14px 34px rgba(245,130,10,0.4);">
+          Смотреть расписание
+        </span>
+        <span style="padding:16px 28px; border:1px solid rgba(255,255,255,0.14); border-radius:12px;
+               background:rgba(255,255,255,0.03); font-weight:600; font-size:16px; color:#eaeaea;">
+          Telegram-канал
+        </span>
+      </div>
+
+      <!-- trust row, no emoji -->
+      <div style="display:flex; align-items:center; gap:26px; margin-top:6px; font-size:14px; color:#7d7d7d; font-weight:500;">
+        <span style="display:flex; align-items:center; gap:9px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+          Фрирол каждый день
+        </span>
+        <span style="width:4px; height:4px; border-radius:50%; background:#3a3a3a;"></span>
+        <span style="display:flex; align-items:center; gap:9px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          Открытый рейтинг
+        </span>
+        <span style="width:4px; height:4px; border-radius:50%; background:#3a3a3a;"></span>
+        <span style="display:flex; align-items:center; gap:9px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/></svg>
+          Чемпионат месяца
+        </span>
+      </div>
+    </div>
+
+    <!-- RIGHT: the pocket pair of twos -->
+    <div style="flex:1; position:relative; height:100%; display:flex; align-items:center; justify-content:center;">
+
+      <!-- glow -->
+      <div style="position:absolute; width:520px; height:520px; border-radius:50%;
+           background:radial-gradient(circle, rgba(245,130,10,0.22), transparent 62%); filter:blur(10px);"></div>
+
+      <!-- chip, floating behind-left -->
+      <div style="position:absolute; left:8%; bottom:16%; width:118px; height:118px; border-radius:50%;
+           background:conic-gradient(#1c1c1c 0 0); box-shadow:0 20px 50px rgba(0,0,0,0.6), inset 0 0 0 3px rgba(245,130,10,0.5);
+           display:flex; align-items:center; justify-content:center; transform:rotate(-12deg);">
+        <div style="position:absolute; inset:8px; border-radius:50%;
+             background:repeating-conic-gradient(#F5820A 0 12deg, transparent 12deg 30deg);"></div>
+        <div style="position:absolute; inset:20px; border-radius:50%; background:#141414; border:2px dashed rgba(245,130,10,0.7);"></div>
+        <span style="position:relative; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:26px; color:#F5820A;">G</span>
+      </div>
+
+      <!-- card: 2 of spades (goose) -->
+      <div style="position:absolute; transform:translate(-58px,6px) rotate(-9deg); width:236px; height:334px;
+           background:linear-gradient(160deg,#ffffff,#eceff3); border-radius:20px;
+           box-shadow:0 34px 70px rgba(0,0,0,0.62); padding:18px; box-sizing:border-box;
+           display:flex; flex-direction:column; justify-content:space-between; color:#15171a;">
+        <div style="display:flex; flex-direction:column; align-items:center; width:26px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; line-height:1;">2</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#15171a"><path d="M12 2C9 7 3 9 3 14a5 5 0 0 0 8 4c-.3 1.4-1 2.5-2 3h6c-1-.5-1.7-1.6-2-3a5 5 0 0 0 8-4c0-5-6-7-9-12z"/></svg>
+        </div>
+        <div style="align-self:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <span style="display:inline-flex; width:96px; height:96px; align-items:center; justify-content:center;
+                 border-radius:50%; border:2px solid rgba(21,23,26,0.14); color:#15171a;">
+            <svg width="62" height="62" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 66 C20 53 34 45 49 47 C61 49 67 58 64 67 C61 74 52 76 45 73"/>
+              <path d="M24 66 C18 63 15 68 20 71"/>
+              <path d="M60 49 C62 37 64 29 73 26 C79 24 82 30 80 33 C78 36 74 37 71 34"/>
+              <path d="M80 31 l9 -2 -7 6 z" fill="currentColor" stroke="none"/>
+              <circle cx="74" cy="31" r="1.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span style="font-size:10px; letter-spacing:3px; color:#8a8f96; font-weight:700;">GOOSE CLUB</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; width:26px; align-self:flex-end; transform:rotate(180deg);">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; line-height:1;">2</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#15171a"><path d="M12 2C9 7 3 9 3 14a5 5 0 0 0 8 4c-.3 1.4-1 2.5-2 3h6c-1-.5-1.7-1.6-2-3a5 5 0 0 0 8-4c0-5-6-7-9-12z"/></svg>
+        </div>
+      </div>
+
+      <!-- card: 2 of hearts (goose) -->
+      <div style="position:absolute; transform:translate(112px,-14px) rotate(10deg); width:236px; height:334px;
+           background:linear-gradient(160deg,#ffffff,#eceff3); border-radius:20px;
+           box-shadow:0 34px 70px rgba(0,0,0,0.6); padding:18px; box-sizing:border-box;
+           display:flex; flex-direction:column; justify-content:space-between; color:#C0392B;">
+        <div style="display:flex; flex-direction:column; align-items:center; width:26px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; line-height:1;">2</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#C0392B"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>
+        </div>
+        <div style="align-self:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <span style="display:inline-flex; width:96px; height:96px; align-items:center; justify-content:center;
+                 border-radius:50%; border:2px solid rgba(192,57,43,0.16); color:#C0392B;">
+            <svg width="62" height="62" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 66 C20 53 34 45 49 47 C61 49 67 58 64 67 C61 74 52 76 45 73"/>
+              <path d="M24 66 C18 63 15 68 20 71"/>
+              <path d="M60 49 C62 37 64 29 73 26 C79 24 82 30 80 33 C78 36 74 37 71 34"/>
+              <path d="M80 31 l9 -2 -7 6 z" fill="currentColor" stroke="none"/>
+              <circle cx="74" cy="31" r="1.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span style="font-size:10px; letter-spacing:3px; color:#c98; font-weight:700;">GOOSE CLUB</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; width:26px; align-self:flex-end; transform:rotate(180deg);">
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; line-height:1;">2</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#C0392B"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>
+        </div>
+      </div>
+
+      <!-- caption tag -->
+      <div style="position:absolute; bottom:9%; right:6%; display:inline-flex; align-items:center; gap:9px;
+           padding:9px 16px; border:1px solid rgba(255,255,255,0.1); border-radius:999px;
+           background:rgba(15,15,15,0.6); font-size:13px; color:#d6d6d6; letter-spacing:0.4px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#D4A017;"></span>
+        Наша фишка — карманная пара двоек
+      </div>
+
+    </div>
+  </div>
+
+  <!-- scroll hint -->
+  <div style="position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+       display:flex; flex-direction:column; align-items:center; gap:7px; color:#6a6a6a; font-size:12px; letter-spacing:2px;">
+    ВНИЗ
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
