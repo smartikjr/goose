@@ -1,0 +1,39 @@
+{
+  "extraKnownMarketplaces": {
+    "designlang": {
+      "source": {
+        "source": "github",
+        "repo": "Manavarya09/design-extract"
+      }
+    },
+    "szum-tech": {
+      "source": {
+        "source": "github",
+        "repo": "JanSzewczyk/claude-plugins"
+      }
+    },
+    "claude-design-skillstack": {
+      "source": {
+        "source": "github",
+        "repo": "freshtechbro/claudedesignskills"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "designlang@designlang": true,
+    "threejs-webgl@claude-design-skillstack": true,
+    "gsap-scrolltrigger@claude-design-skillstack": true,
+    "modern-web-design@claude-design-skillstack": true,
+    "scroll-reveal-libraries@claude-design-skillstack": true,
+    "design@szum-tech": true,
+    "performance@szum-tech": true,
+    "code-quality@szum-tech": true,
+    "claude-mem@thedotmack": true
+  }
+}
