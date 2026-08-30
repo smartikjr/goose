@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#0a0a0a;font-family:system-ui,sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;}
+  .goose-cup{position:relative;width:240px;height:300px;display:flex;align-items:center;justify-content:center;}
+  .goose-cup .glow{position:absolute;top:38%;left:50%;width:210px;height:210px;transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(212,160,23,0.30),transparent 62%);filter:blur(6px);
+    animation:cupGlow 3.4s ease-in-out infinite;}
+  .goose-cup svg.cup{position:relative;width:200px;height:240px;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55));
+    transform-origin:50% 80%;animation:cupFloat 3.4s ease-in-out infinite;}
+  .goose-cup .shine{mix-blend-mode:screen;opacity:.0;animation:cupShine 4.2s ease-in-out infinite;}
+  .goose-cup .spk{position:absolute;color:#F7D465;font-size:16px;opacity:0;filter:drop-shadow(0 0 4px #F0C040);}
+  .goose-cup .s1{top:22%;left:26%;animation:twinkle 2.6s ease-in-out infinite;}
+  .goose-cup .s2{top:16%;left:66%;animation:twinkle 2.6s ease-in-out .9s infinite;}
+  .goose-cup .s3{top:34%;left:74%;animation:twinkle 2.6s ease-in-out 1.7s infinite;}
+  @keyframes cupFloat{0%,100%{transform:translateY(0) rotate(-2.5deg);}50%{transform:translateY(-12px) rotate(2.5deg);}}
+  @keyframes cupGlow{0%,100%{opacity:.55;}50%{opacity:1;}}
+  @keyframes cupShine{0%,55%{opacity:0;transform:translateX(-40px);}70%{opacity:.9;}85%,100%{opacity:0;transform:translateX(40px);}}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4);}50%{opacity:1;transform:scale(1);}}
+  /* hover boost */
+  .goose-cup:hover svg.cup{animation-duration:1.6s;}
+  .goose-cup:hover .glow{animation-duration:1.6s;}
+</style></head><body>
+
+<div class="goose-cup">
+  <div class="glow"></div>
+  <span class="spk s1">✦</span><span class="spk s2">✦</span><span class="spk s3">✦</span>
+  <svg class="cup" viewBox="0 0 200 240">
+    <defs>
+      <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F7D465"/><stop offset=".5" stop-color="#D4A017"/><stop offset="1" stop-color="#9c7208"/>
+      </linearGradient>
+      <linearGradient id="gAd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#D4A017"/><stop offset="1" stop-color="#7d5c06"/>
+      </linearGradient>
+      <clipPath id="bowlClip"><path d="M58 62 h84 v20 a42 50 0 0 1 -84 0 z"/></clipPath>
+    </defs>
+    <rect x="64" y="214" width="72" height="14" rx="4" fill="url(#gAd)"/>
+    <rect x="80" y="198" width="40" height="18" rx="2" fill="url(#gA)"/>
+    <rect x="92" y="168" width="16" height="32" fill="url(#gAd)"/>
+    <path d="M56 66 q-30 2 -26 32 q3 20 26 20 v-12 q-14 0 -15 -12 q-1 -12 15 -14 z" fill="url(#gA)"/>
+    <path d="M144 66 q30 2 26 32 q-3 20 -26 20 v-12 q14 0 15 -12 q1 -12 -15 -14 z" fill="url(#gA)"/>
+    <path d="M58 62 h84 v20 a42 50 0 0 1 -84 0 z" fill="url(#gA)"/>
+    <ellipse cx="100" cy="62" rx="43" ry="11" fill="#F7D465"/>
+    <ellipse cx="100" cy="62" rx="34" ry="8" fill="#b98d10"/>
+    <path d="M70 60 q30 14 60 0 q-8 34 -30 40 q-22 -6 -30 -40 z" fill="rgba(255,255,255,0.12)"/>
+    <!-- goose emblem -->
+    <g transform="translate(66,62) scale(0.68)" fill="none" stroke="#3a2a05" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 66 C20 53 34 45 49 47 C61 49 67 58 64 67 C61 74 52 76 45 73"/>
+      <path d="M24 66 C18 63 15 68 20 71"/>
+      <path d="M60 49 C62 37 64 29 73 26 C79 24 82 30 80 33 C78 36 74 37 71 34"/>
+      <path d="M80 31 l9 -2 -7 6 z" fill="#3a2a05" stroke="none"/>
+      <circle cx="74" cy="31" r="1.8" fill="#3a2a05" stroke="none"/>
+    </g>
+    <!-- moving shine over the bowl -->
+    <g clip-path="url(#bowlClip)"><rect class="shine" x="40" y="55" width="26" height="60" fill="#fff" transform="skewX(-18)"/></g>
+  </svg>
+</div>
+</body></html>
