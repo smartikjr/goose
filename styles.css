@@ -1375,7 +1375,17 @@ footer {
   .rating-grid { grid-template-columns: 1fr; }
   .rules-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  .hero-cards-showcase { display: none; }
+  #hero { flex-wrap: wrap; align-content: flex-start; }
+  .hero-cards-showcase {
+    position: static;
+    flex-basis: 100%;
+    transform: none;
+    margin: 1.5rem auto 0;
+  }
+  .sc-stack { width: 220px; height: 210px; }
+  .sc1 { transform: translate(-50%, -50%) rotate(-8deg) translate(-28px, 4px) scale(0.6); }
+  .sc2 { transform: translate(-50%, -50%) rotate(8deg) translate(28px, -4px) scale(0.6); }
+  .sc-caption { font-size: 0.78rem; padding: 0 1rem; }
   .hero-flock-canvas { display: none; }
   .goose-cup { width: 200px; height: 250px; }
   .goose-cup svg.cup { width: 166px; height: 200px; }
@@ -1423,4 +1433,18 @@ footer {
   .cd-item span { font-size: 1.5rem; min-width: 50px; padding: 0.4rem 0.5rem; }
   .tg-block { flex-direction: column; text-align: center; }
   .tg-btn { margin-left: 0; width: 100%; text-align: center; }
+}
+
+/* Mobile hero cards — light idle sway, static otherwise (no hover/parallax) */
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .sc1 { animation: scMobileSway1 4.5s ease-in-out infinite; }
+  .sc2 { animation: scMobileSway2 4.5s ease-in-out 0.3s infinite; }
+}
+@keyframes scMobileSway1 {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-8deg) translate(-28px, 4px) scale(0.6); }
+  50% { transform: translate(-50%, -50%) rotate(-6deg) translate(-28px, -2px) scale(0.6); }
+}
+@keyframes scMobileSway2 {
+  0%, 100% { transform: translate(-50%, -50%) rotate(8deg) translate(28px, -4px) scale(0.6); }
+  50% { transform: translate(-50%, -50%) rotate(6deg) translate(28px, 2px) scale(0.6); }
 }
