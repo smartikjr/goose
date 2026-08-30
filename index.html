@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -46,10 +47,12 @@
       <svg class="nav-goose-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="50" fill="#F5820A"/>
         <path d="M50 12 C28 12 14 28 14 50 C14 72 28 88 50 88 C60 88 68 84 74 78 L74 54 L52 54 L52 64 L63 64 C60 70 55 73 50 73 C34 73 28 62 28 50 C28 38 36 27 50 27 C57 27 63 30 67 35 L78 25 C71 17 61 12 50 12Z" fill="white"/>
-        <ellipse cx="72" cy="22" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
-        <path d="M80 20 L92 18 L90 24 L80 24Z" fill="#F5820A" stroke="#1a1a1a" stroke-width="1.5"/>
-        <circle cx="74" cy="20" r="2" fill="#1a1a1a"/>
-        <path d="M65 28 C67 22 70 18 72 14 C74 10 80 8 82 14 C79 16 76 20 74 26 C72 30 68 32 65 28Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+        <g class="goose-head">
+          <ellipse cx="72" cy="22" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M80 20 L92 18 L90 24 L80 24Z" fill="#F5820A" stroke="#1a1a1a" stroke-width="1.5"/>
+          <circle class="logo-eye" cx="74" cy="20" r="2" fill="#1a1a1a"/>
+          <path d="M65 28 C67 22 70 18 72 14 C74 10 80 8 82 14 C79 16 76 20 74 26 C72 30 68 32 65 28Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+        </g>
       </svg>
       <span>GOOSE</span>
     </a>
@@ -58,7 +61,6 @@
       <li><a href="#tournaments">Расписание</a></li>
       <li><a href="#bonuses">Бонусы</a></li>
       <li><a href="#rating">Рейтинг</a></li>
-      <li><a href="#features">Стикеры</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
     <a href="https://t.me/goosespb_admin" target="_blank" class="nav-cta">Записаться</a>
@@ -71,7 +73,6 @@
     <a href="#tournaments" class="mm-link">Расписание</a>
     <a href="#bonuses" class="mm-link">Бонусы</a>
     <a href="#rating" class="mm-link">Рейтинг</a>
-    <a href="#features" class="mm-link">Стикеры</a>
     <a href="#contact" class="mm-link">Контакты</a>
   </div>
 </nav>
@@ -79,11 +80,15 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
+    <div class="hero-glow"></div>
+    <canvas id="gooseFlock" class="hero-flock-canvas" aria-hidden="true"></canvas>
     <div class="felt-grid"></div>
   </div>
-  <div class="floating-cards" id="floatingCards"></div>
   <div class="hero-content">
-    <div class="hero-badge reveal">СПб · М. Площадь Ленина · 18+</div>
+    <div class="hero-badge reveal">
+      <span class="badge-dot" aria-hidden="true"></span>
+      СПб · М. Площадь Ленина · 18+
+    </div>
     <h1 class="hero-title reveal">
       <span class="hero-g">G</span>OOSE<br/>
       <span class="hero-sub">POKER CLUB</span>
@@ -94,20 +99,66 @@
     </p>
     <div class="hero-buttons reveal">
       <a href="#tournaments" class="btn-primary">Смотреть расписание</a>
-      <a href="https://t.me/goosepoker" target="_blank" class="btn-ghost">Telegram-канал</a>
+      <a href="https://t.me/goosepoker" target="_blank" class="btn-glass">Telegram-канал</a>
     </div>
-    <div class="hero-perks reveal">
-      <div class="perk-item">🆓 Фриролл каждый день</div>
-      <div class="perk-sep"></div>
-      <div class="perk-item">📊 Рейтинговая система</div>
-      <div class="perk-sep"></div>
-      <div class="perk-item">🏆 Чемпионат месяца</div>
+    <div class="hero-facts reveal">
+      <div class="fact-item">
+        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8.5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.5a2 2 0 0 0 0 4v1.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.5a2 2 0 0 0 0-4V8.5Z"/>
+          <path d="M9 6.5v11" stroke-dasharray="2 2.4"/>
+        </svg>
+        Фриролл каждый день
+      </div>
+      <span class="fact-dot" aria-hidden="true"></span>
+      <div class="fact-item">
+        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 19V13M12 19V9M19 19V5"/>
+        </svg>
+        Рейтинговая система
+      </div>
+      <span class="fact-dot" aria-hidden="true"></span>
+      <div class="fact-item">
+        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3 L14.5 9.5 L21 10 L16 14.5 L17.5 21 L12 17.5 L6.5 21 L8 14.5 L3 10 L9.5 9.5 Z"/>
+        </svg>
+        Чемпионат месяца
+      </div>
     </div>
   </div>
   <div class="hero-cards-showcase">
-    <div class="showcase-card sc1">A♠</div>
-    <div class="showcase-card sc2">K♥</div>
-    <div class="showcase-card sc3">Q♣</div>
+    <div class="sc-stack">
+      <div class="showcase-card sc1">
+        <span class="sc-corner sc-corner-tl"><span class="sc-rank sc-black">2</span><span class="sc-suit sc-black">♠</span></span>
+        <span class="sc-watermark sc-watermark-black" aria-hidden="true">2</span>
+        <span class="sc-goose-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <ellipse cx="42" cy="68" rx="26" ry="17" fill="currentColor"/>
+            <path d="M58 60 Q66 40 56 24 Q68 28 62 16" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="62" cy="14" r="7" fill="currentColor"/>
+            <path d="M68 12 L81 8 L70 19 Z" fill="currentColor"/>
+            <path d="M26 60 Q42 55 56 64" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+        </span>
+        <span class="sc-club-label">GOOSE CLUB</span>
+        <span class="sc-corner sc-corner-br"><span class="sc-rank sc-black">2</span><span class="sc-suit sc-black">♠</span></span>
+      </div>
+      <div class="showcase-card sc2">
+        <span class="sc-corner sc-corner-tl"><span class="sc-rank sc-red">2</span><span class="sc-suit sc-red">♥</span></span>
+        <span class="sc-watermark sc-watermark-red" aria-hidden="true">2</span>
+        <span class="sc-goose-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <ellipse cx="42" cy="68" rx="26" ry="17" fill="currentColor"/>
+            <path d="M58 60 Q66 40 56 24 Q68 28 62 16" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="62" cy="14" r="7" fill="currentColor"/>
+            <path d="M68 12 L81 8 L70 19 Z" fill="currentColor"/>
+            <path d="M26 60 Q42 55 56 64" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+        </span>
+        <span class="sc-club-label">GOOSE CLUB</span>
+        <span class="sc-corner sc-corner-br"><span class="sc-rank sc-red">2</span><span class="sc-suit sc-red">♥</span></span>
+      </div>
+    </div>
+    <p class="sc-caption">Наша фишка — карманная пара двоек</p>
   </div>
   <div class="scroll-indicator">
     <span>Вниз</span>
@@ -117,22 +168,22 @@
 
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>🃏 GOOSE POKER CLUB</span>
+    <span>GOOSE POKER CLUB</span>
     <span>♠ GOOSE CLASSIC</span>
     <span>♥ GOOSE HUNTER</span>
     <span>♣ MYSTERY BOUNTY</span>
     <span>♦ GOOSE DEEPSTACK</span>
-    <span>🦆 WIN THE BUTTON</span>
-    <span>⚡ GOOSE BATTERY</span>
-    <span>🏆 ЧЕМПИОНАТ МЕСЯЦА</span>
-    <span>🃏 GOOSE POKER CLUB</span>
+    <span>WIN THE BUTTON</span>
+    <span>GOOSE BATTERY</span>
+    <span>ЧЕМПИОНАТ МЕСЯЦА</span>
+    <span>GOOSE POKER CLUB</span>
     <span>♠ GOOSE CLASSIC</span>
     <span>♥ GOOSE HUNTER</span>
     <span>♣ MYSTERY BOUNTY</span>
     <span>♦ GOOSE DEEPSTACK</span>
-    <span>🦆 WIN THE BUTTON</span>
-    <span>⚡ GOOSE BATTERY</span>
-    <span>🏆 ЧЕМПИОНАТ МЕСЯЦА</span>
+    <span>WIN THE BUTTON</span>
+    <span>GOOSE BATTERY</span>
+    <span>ЧЕМПИОНАТ МЕСЯЦА</span>
   </div>
 </div>
 
@@ -143,62 +194,63 @@
       <span class="section-tag">О клубе</span>
       <h2>Добро пожаловать<br/><em>в Джи-Джи</em></h2>
     </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>GOOSE — это покерный клуб без денежных ставок и без денежных призов. Игра ведётся за рейтинговые очки. Это важно: у нас приходят за кайфом от игры, а не за кошельком соседа.</p>
-        <p>Светлый зал с панорамными окнами, 6 столов, рабочий бар с закусками, бесплатная парковка и 30 секунд от метро «Площадь Ленина». Каждый вечер — свой турнир, своя история.</p>
-        <p>Можешь прийти совсем без опыта — фриролл доступен всем. Можешь прийти за рейтингом — мейн-ивент в воскресенье ждёт.</p>
-        <div class="about-features">
-          <div class="af-item">
-            <span class="af-icon">🎰</span>
-            <div>
-              <strong>6 покерных столов</strong>
-              <span>Новые, полноценные, с профессиональным покрытием</span>
-            </div>
-          </div>
-          <div class="af-item">
-            <span class="af-icon">📊</span>
-            <div>
-              <strong>Рейтинговая система</strong>
-              <span>Открытая таблица — каждый видит своё место</span>
-            </div>
-          </div>
-          <div class="af-item">
-            <span class="af-icon">🆓</span>
-            <div>
-              <strong>Фриролл каждый вечер</strong>
-              <span>Вход бесплатный — приходи и играй</span>
-            </div>
-          </div>
-          <div class="af-item">
-            <span class="af-icon">🚇</span>
-            <div>
-              <strong>30 секунд от метро</strong>
-              <span>М. Площадь Ленина, ТК ТуКан, 2 этаж</span>
-            </div>
-          </div>
+    <div class="about-copy reveal">
+      <p>GOOSE — это покерный клуб без денежных ставок и без денежных призов. Игра ведётся за рейтинговые очки. Это важно: у нас приходят за кайфом от игры, а не за кошельком соседа.</p>
+      <p>Светлый зал с панорамными окнами, 6 столов, рабочий бар с закусками, бесплатная парковка и 30 секунд от метро «Площадь Ленина». Каждый вечер — свой турнир, своя история.</p>
+      <p>Можешь прийти совсем без опыта — фриролл доступен всем. Можешь прийти за рейтингом — мейн-ивент в воскресенье ждёт.</p>
+    </div>
+
+    <div class="about-features reveal">
+      <div class="af-item">
+        <div>
+          <strong>6 покерных столов</strong>
+          <span>Новые, полноценные, с профессиональным покрытием</span>
         </div>
       </div>
-      <div class="about-visual reveal">
-        <div class="cards-fan">
-          <div class="fan-card fc1">A<br/><span>♠</span></div>
-          <div class="fan-card fc2">K<br/><span>♥</span></div>
-          <div class="fan-card fc3">Q<br/><span>♦</span></div>
-          <div class="fan-card fc4">J<br/><span>♣</span></div>
-          <div class="fan-card fc5">10<br/><span>♠</span></div>
+      <div class="af-item">
+        <div>
+          <strong>Рейтинговая система</strong>
+          <span>Открытая таблица — каждый видит своё место</span>
         </div>
-        <div class="chip-stack">
-          <div class="chip ch1"></div>
-          <div class="chip ch2"></div>
-          <div class="chip ch3"></div>
-          <div class="chip ch4"></div>
-          <div class="chip ch5"></div>
-          <div class="chip-label">ALL IN</div>
+      </div>
+      <div class="af-item">
+        <div>
+          <strong>Фриролл каждый вечер</strong>
+          <span>Вход бесплатный — приходи и играй</span>
+        </div>
+      </div>
+      <div class="af-item">
+        <div>
+          <strong>30 секунд от метро</strong>
+          <span>М. Площадь Ленина, ТК ТуКан, 2 этаж</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual reveal">
+      <div class="allin-chip" id="allInChip" aria-hidden="true">
+        <div class="allin-chip-border">
+          <div class="allin-chip-face">
+            <svg class="allin-goose" viewBox="0 0 100 100">
+              <ellipse cx="42" cy="68" rx="26" ry="17" fill="currentColor"/>
+              <path d="M58 60 Q66 40 56 24 Q68 28 62 16" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+              <circle cx="62" cy="14" r="7" fill="currentColor"/>
+              <path d="M68 12 L81 8 L70 19 Z" fill="currentColor"/>
+              <path d="M26 60 Q42 55 56 64" fill="none" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+            <span class="allin-label">ALL IN</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider" aria-hidden="true">
+  <span class="divider-line"></span>
+  <svg class="divider-feather" viewBox="0 0 24 24"><path d="M12 2 C 8 6, 6 12, 6 18 C 6 20, 8 22, 10 21 C 9 19, 9 16, 10 14 M6 18 L2 22 M8 15 L4 17 M10 11 L6 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+  <span class="divider-line"></span>
+</div>
 
 <!-- WEEKLY SCHEDULE -->
 <section id="tournaments">
@@ -212,7 +264,9 @@
     <div class="week-grid">
 
       <div class="week-day reveal">
-        <div class="wd-logo"><img src="media/logo-classic.jpg.jfif" alt="GOOSE CLASSIC"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
         <div class="wd-header">
           <span class="wd-day">ПН</span>
           <span class="wd-time">19:00</span>
@@ -225,17 +279,19 @@
             <span class="tag tag-rating">100% рейтинг</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🃏 Стэк: 10к (0₽) или 30к (1000₽)</div>
-            <div class="wdd">🔄 Re-entry без ограничений</div>
-            <div class="wdd">💊 Аддон: 60к за 1000₽</div>
-            <div class="wdd">🕙 Поздняя рег. до 22:00</div>
+            <div class="wdd">Стэк: 10к (0₽) или 30к (1000₽)</div>
+            <div class="wdd">Re-entry без ограничений</div>
+            <div class="wdd">Аддон: 60к за 1000₽</div>
+            <div class="wdd">Поздняя рег. до 22:00</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day reveal">
-        <div class="wd-logo"><img src="media/logo-hunter.jpg.jfif" alt="GOOSE HUNTER"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
         <div class="wd-header">
           <span class="wd-day">ВТ</span>
           <span class="wd-time">19:00</span>
@@ -249,17 +305,19 @@
             <span class="tag tag-ko">Нокаут</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">💥 +50 очков за нокаут</div>
-            <div class="wdd">🎯 +100 очков после поздней рег.</div>
-            <div class="wdd">🃏 Стэк: 10к (0₽) или 30к (1000₽)</div>
-            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+            <div class="wdd">+50 очков за нокаут</div>
+            <div class="wdd">+100 очков после поздней рег.</div>
+            <div class="wdd">Стэк: 10к (0₽) или 30к (1000₽)</div>
+            <div class="wdd">Поздняя рег. до 21:40</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day reveal">
-        <div class="wd-logo"><img src="media/logo-freeroll.jpg.jfif" alt="GOOSE CLASSIC Фриролл"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
         <div class="wd-header">
           <span class="wd-day">СР</span>
           <span class="wd-time">19:00</span>
@@ -273,17 +331,19 @@
             <span class="tag tag-rating">100% рейтинг</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🃏 Стэк: 30к (0₽)</div>
-            <div class="wdd">🔄 Re-entry: 1000₽</div>
-            <div class="wdd">💊 Аддон: 60к за 1000₽</div>
-            <div class="wdd">🕙 Поздняя рег. до 22:00</div>
+            <div class="wdd">Стэк: 30к (0₽)</div>
+            <div class="wdd">Re-entry: 1000₽</div>
+            <div class="wdd">Аддон: 60к за 1000₽</div>
+            <div class="wdd">Поздняя рег. до 22:00</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day reveal">
-        <div class="wd-logo"><img src="media/logo-mystery.jpg.jfif" alt="MYSTERY BOUNTY"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
         <div class="wd-header">
           <span class="wd-day">ЧТ</span>
           <span class="wd-time">19:00</span>
@@ -296,18 +356,20 @@
             <span class="tag tag-mystery">Mystery</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🎁 Призы: очки, бар, стэки, входы</div>
-            <div class="wdd">🃏 Стэк: 0₽ вход</div>
-            <div class="wdd">🔄 Re-entry: 1000₽</div>
-            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+            <div class="wdd">Призы: очки, бар, стэки, входы</div>
+            <div class="wdd">Стэк: 0₽ вход</div>
+            <div class="wdd">Re-entry: 1000₽</div>
+            <div class="wdd">Поздняя рег. до 21:40</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day wd-featured reveal">
-        <div class="wd-hot-badge">🔥 Пятница</div>
-        <div class="wd-logo"><img src="media/logo-deepstack.jpg.jfif" alt="GOOSE DEEPSTACK"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
+        <div class="wd-hot-badge">Пятница</div>
         <div class="wd-header">
           <span class="wd-day">ПТ</span>
           <span class="wd-time">19:00</span>
@@ -320,17 +382,19 @@
             <span class="tag tag-deep">Дипстэк</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🃏 Стэк: 40к (0₽)</div>
-            <div class="wdd">💊 Аддон: 100к за 1000₽</div>
-            <div class="wdd">🔄 Re-entry: 40к за 1000₽</div>
-            <div class="wdd">🕙 Поздняя рег. до 21:40</div>
+            <div class="wdd">Стэк: 40к (0₽)</div>
+            <div class="wdd">Аддон: 100к за 1000₽</div>
+            <div class="wdd">Re-entry: 40к за 1000₽</div>
+            <div class="wdd">Поздняя рег. до 21:40</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day reveal">
-        <div class="wd-logo"><img src="media/logo-button.jpg.jfif" alt="WIN THE BUTTON"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
         <div class="wd-header">
           <span class="wd-day">СБ</span>
           <span class="wd-time">17:00</span>
@@ -343,18 +407,20 @@
             <span class="tag tag-special">Спецформат</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🎯 Победитель раздачи = кнопка</div>
-            <div class="wdd">🃏 Стэк: 30к (0₽)</div>
-            <div class="wdd">🔄 Re-entry: 1000₽</div>
-            <div class="wdd">🕙 Поздняя рег. до 20:00</div>
+            <div class="wdd">Победитель раздачи = кнопка</div>
+            <div class="wdd">Стэк: 30к (0₽)</div>
+            <div class="wdd">Re-entry: 1000₽</div>
+            <div class="wdd">Поздняя рег. до 20:00</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
       </div>
 
       <div class="week-day wd-main-event reveal">
-        <div class="wd-hot-badge wd-badge-blue">⚡ Мейн-ивент</div>
-        <div class="wd-logo"><img src="media/logo-battery.jpg.jfif" alt="GOOSE BATTERY"></div>
+        <div class="wd-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><ellipse cx="18" cy="24" rx="13" ry="9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="14" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M35 12 L40 11 L38 15 L35 15 Z" fill="currentColor"/></svg>
+        </div>
+        <div class="wd-hot-badge wd-badge-gold">Мейн-ивент</div>
         <div class="wd-header">
           <span class="wd-day">ВС</span>
           <span class="wd-time">17:00</span>
@@ -367,10 +433,10 @@
             <span class="tag tag-x2">×2 рейтинг</span>
           </div>
           <div class="wd-details">
-            <div class="wdd">🃏 Стэк: 30к (1000₽) или 60к (1500₽)</div>
-            <div class="wdd">🏆 Победитель: ×2 рейтинг + 3 входа</div>
-            <div class="wdd">⏳ Уровни: 20/12 мин</div>
-            <div class="wdd">🕙 Поздняя рег. до 19:40</div>
+            <div class="wdd">Стэк: 30к (1000₽) или 60к (1500₽)</div>
+            <div class="wdd">Победитель: ×2 рейтинг + 3 входа</div>
+            <div class="wdd">Уровни: 20/12 мин</div>
+            <div class="wdd">Поздняя рег. до 19:40</div>
           </div>
         </div>
         <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary t-btn">Записаться</a>
@@ -379,7 +445,7 @@
     </div>
 
     <div class="countdown-block reveal">
-      <p class="cd-label" id="countdownLabel">⚡ До следующего турнира:</p>
+      <p class="cd-label" id="countdownLabel">До следующего турнира:</p>
       <div class="countdown">
         <div class="cd-item"><span id="cd-d">00</span><label>дней</label></div>
         <div class="cd-sep">:</div>
@@ -395,27 +461,21 @@
       <h3>Общее для всех турниров</h3>
       <div class="rules-grid">
         <div class="rule-item">
-          <span>⏳</span>
           <p>Уровни: 17/12 мин (кроме Battery — 20/12)</p>
         </div>
         <div class="rule-item">
-          <span>📊</span>
           <p>Очки: 100% рейтинг за каждый турнир</p>
         </div>
         <div class="rule-item">
-          <span>🃏</span>
           <p>Блайнды: 100/100/100 — SB/BB/Ante</p>
         </div>
         <div class="rule-item">
-          <span>☕</span>
           <p>Перерыв каждые 1.5 часа</p>
         </div>
         <div class="rule-item">
-          <span>❗</span>
           <p>Игра без денежных призов. 18+</p>
         </div>
         <div class="rule-item">
-          <span>♥️♦️</span>
           <p>Рука клуба: выиграй с карманной парой 22 → +22 ББ</p>
         </div>
       </div>
@@ -432,32 +492,127 @@
       <p>Действуют почти на всех турнирах — приходи, заказывай, играй вовремя.</p>
     </div>
     <div class="bonuses-grid">
-      <div class="bonus-card reveal">
-        <span class="bonus-icon">🏃</span>
+      <div class="bonus-card reveal bg-early">
+        <div class="bg-stage">
+          <svg class="bg-goose" viewBox="0 0 120 100" aria-hidden="true">
+            <g class="bg-clock">
+              <circle cx="18" cy="70" r="9" fill="#171310" stroke="var(--orange)" stroke-width="2"/>
+              <circle cx="11" cy="61" r="2.6" fill="none" stroke="var(--orange)" stroke-width="1.4"/>
+              <circle cx="25" cy="61" r="2.6" fill="none" stroke="var(--orange)" stroke-width="1.4"/>
+              <path d="M18 70 L18 65 M18 70 L21 72" stroke="var(--gold-light)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            </g>
+            <g class="bg-rings">
+              <path d="M6 56 Q3 51 6 47" fill="none" stroke="var(--gold-light)" stroke-width="1.4" stroke-linecap="round" opacity="0"/>
+              <path d="M30 56 Q33 51 30 47" fill="none" stroke="var(--gold-light)" stroke-width="1.4" stroke-linecap="round" opacity="0"/>
+            </g>
+            <path class="bg-legs" d="M52 90 L50 98 M66 90 L68 98" stroke="#171310" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse class="bg-body" cx="58" cy="72" rx="26" ry="18" fill="var(--gold-light)" stroke="#171310" stroke-width="2.5"/>
+            <path class="bg-wing" d="M40 66 Q26 62 24 76 Q30 86 46 80 Q44 72 40 66 Z" fill="#c9860a" stroke="#171310" stroke-width="2"/>
+            <g class="bg-neckhead">
+              <path class="bg-neck" d="M74 68 Q82 50 74 36 Q84 38 78 24" fill="none" stroke="var(--gold-light)" stroke-width="9" stroke-linecap="round"/>
+              <circle class="bg-head" cx="78" cy="22" r="8" fill="var(--gold-light)" stroke="#171310" stroke-width="2"/>
+              <path class="bg-beak" d="M85 19 L98 15 L88 27 Z" fill="var(--orange)" stroke="#171310" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle class="bg-eye" cx="80" cy="20" r="1.8" fill="#171310"/>
+            </g>
+          </svg>
+        </div>
         <h3>Ранний гусь</h3>
         <div class="bonus-reward">+5 000 к стэку</div>
         <p>Первые 10 зарегистрировавшихся на турнир получают бонус к стартовому стэку. Записывайся заранее в @goosespb_admin.</p>
       </div>
-      <div class="bonus-card reveal">
-        <span class="bonus-icon">🎩</span>
+      <div class="bonus-card reveal bg-polite">
+        <div class="bg-stage">
+          <svg class="bg-goose" viewBox="0 0 120 100" aria-hidden="true">
+            <path class="bg-legs" d="M52 90 L50 98 M66 90 L68 98" stroke="#171310" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse class="bg-body" cx="58" cy="72" rx="26" ry="18" fill="var(--gold-light)" stroke="#171310" stroke-width="2.5"/>
+            <path class="bg-wing" d="M40 66 Q26 62 24 76 Q30 86 46 80 Q44 72 40 66 Z" fill="#c9860a" stroke="#171310" stroke-width="2"/>
+            <g class="bg-neckhead">
+              <path class="bg-neck" d="M74 68 Q82 50 74 36 Q84 38 78 24" fill="none" stroke="var(--gold-light)" stroke-width="9" stroke-linecap="round"/>
+              <circle class="bg-head" cx="78" cy="22" r="8" fill="var(--gold-light)" stroke="#171310" stroke-width="2"/>
+              <path class="bg-beak" d="M85 19 L98 15 L88 27 Z" fill="var(--orange)" stroke="#171310" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle class="bg-eye" cx="80" cy="20" r="1.8" fill="#171310"/>
+              <g class="bg-hat">
+                <ellipse cx="79" cy="15" rx="9" ry="2.2" fill="#171310"/>
+                <rect x="73" y="3" width="12" height="12" rx="1.5" fill="#171310"/>
+                <rect x="73" y="11" width="12" height="2.2" fill="var(--orange)"/>
+              </g>
+            </g>
+            <path class="bg-bowtie" d="M68 64 L74 60 L74 68 Z M80 64 L74 60 L74 68 Z" fill="var(--orange)" stroke="#171310" stroke-width="1"/>
+          </svg>
+        </div>
         <h3>Вежливый гусь</h3>
         <div class="bonus-reward">+5 000 к стэку</div>
         <p>Пришёл вовремя — получи бонус. Клуб ценит пунктуальных. Опоздал — сам виноват.</p>
       </div>
-      <div class="bonus-card reveal">
-        <span class="bonus-icon">🍺</span>
+      <div class="bonus-card reveal bg-hungry">
+        <div class="bg-stage">
+          <svg class="bg-goose" viewBox="0 0 120 100" aria-hidden="true">
+            <ellipse class="bg-bowl" cx="22" cy="88" rx="13" ry="4.5" fill="#171310" stroke="var(--orange)" stroke-width="1.5"/>
+            <circle class="bg-crumb bg-crumb1" cx="34" cy="83" r="1.6" fill="var(--gold-light)"/>
+            <circle class="bg-crumb bg-crumb2" cx="38" cy="87" r="1.2" fill="var(--gold-light)"/>
+            <circle class="bg-crumb bg-crumb3" cx="30" cy="79" r="1.1" fill="var(--gold-light)"/>
+            <path class="bg-legs" d="M52 90 L50 98 M66 90 L68 98" stroke="#171310" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse class="bg-body" cx="58" cy="72" rx="26" ry="18" fill="var(--gold-light)" stroke="#171310" stroke-width="2.5"/>
+            <path class="bg-wing" d="M40 66 Q26 62 24 76 Q30 86 46 80 Q44 72 40 66 Z" fill="#c9860a" stroke="#171310" stroke-width="2"/>
+            <g class="bg-neckhead">
+              <path class="bg-neck" d="M74 68 Q82 50 74 36 Q84 38 78 24" fill="none" stroke="var(--gold-light)" stroke-width="9" stroke-linecap="round"/>
+              <circle class="bg-head" cx="78" cy="22" r="8" fill="var(--gold-light)" stroke="#171310" stroke-width="2"/>
+              <path class="bg-beak" d="M85 19 L98 15 L88 27 Z" fill="var(--orange)" stroke="#171310" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle class="bg-eye" cx="80" cy="20" r="1.8" fill="#171310"/>
+            </g>
+          </svg>
+        </div>
         <h3>Голодный гусь</h3>
         <div class="bonus-reward">+2 000 к стэку</div>
         <p>Сделай заказ на баре (кроме воды) — получи дополнительные фишки. Пей, ешь, играй.</p>
       </div>
-      <div class="bonus-card reveal bonus-card-special">
-        <span class="bonus-icon">♥️♦️</span>
+      <div class="bonus-card reveal bonus-card-special bg-hand">
+        <div class="bg-stage">
+          <svg class="bg-goose" viewBox="0 0 120 100" aria-hidden="true">
+            <path class="bg-legs" d="M52 90 L50 98 M66 90 L68 98" stroke="#171310" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse class="bg-body" cx="58" cy="72" rx="26" ry="18" fill="var(--gold-light)" stroke="#171310" stroke-width="2.5"/>
+            <path class="bg-wing" d="M40 66 Q26 62 24 76 Q30 86 46 80 Q44 72 40 66 Z" fill="#c9860a" stroke="#171310" stroke-width="2"/>
+            <g class="bg-neckhead">
+              <path class="bg-neck" d="M74 68 Q82 50 74 36 Q84 38 78 24" fill="none" stroke="var(--gold-light)" stroke-width="9" stroke-linecap="round"/>
+              <circle class="bg-head" cx="78" cy="22" r="8" fill="var(--gold-light)" stroke="#171310" stroke-width="2"/>
+              <path class="bg-beak" d="M85 19 L98 15 L88 27 Z" fill="var(--orange)" stroke="#171310" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle class="bg-eye" cx="80" cy="20" r="1.8" fill="#171310"/>
+            </g>
+            <g class="bg-cards">
+              <rect class="bg-card bg-card1" x="26" y="56" width="17" height="24" rx="2" fill="#f5f5f5" stroke="#171310" stroke-width="1"/>
+              <text x="34.5" y="71" font-family="'Space Grotesk', sans-serif" font-size="9" text-anchor="middle" fill="#171310" font-weight="700">2</text>
+              <text x="34.5" y="79" font-family="'Space Grotesk', sans-serif" font-size="7" text-anchor="middle" fill="#171310">&#9824;</text>
+              <rect class="bg-card bg-card2" x="39" y="58" width="17" height="24" rx="2" fill="#f5f5f5" stroke="#171310" stroke-width="1"/>
+              <text x="47.5" y="73" font-family="'Space Grotesk', sans-serif" font-size="9" text-anchor="middle" fill="var(--red)" font-weight="700">2</text>
+              <text x="47.5" y="81" font-family="'Space Grotesk', sans-serif" font-size="7" text-anchor="middle" fill="var(--red)">&#9829;</text>
+            </g>
+          </svg>
+        </div>
         <h3>Рука клуба</h3>
         <div class="bonus-reward">+22 ББ к стэку</div>
         <p>Выиграй раздачу с карманной парой 22 (до периода поздней регистрации). Засчитывается если раздача дошла до флопа — блеф префлопом не считается.</p>
       </div>
-      <div class="bonus-card reveal">
-        <span class="bonus-icon">🎰</span>
+      <div class="bonus-card reveal bg-dealer">
+        <div class="bg-stage">
+          <svg class="bg-goose" viewBox="0 0 120 100" aria-hidden="true">
+            <path class="bg-legs" d="M52 90 L50 98 M66 90 L68 98" stroke="#171310" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse class="bg-body" cx="58" cy="72" rx="26" ry="18" fill="var(--gold-light)" stroke="#171310" stroke-width="2.5"/>
+            <path class="bg-wing" d="M40 66 Q26 62 24 76 Q30 86 46 80 Q44 72 40 66 Z" fill="#c9860a" stroke="#171310" stroke-width="2"/>
+            <g class="bg-chip">
+              <circle cx="14" cy="84" r="7" fill="var(--orange)" stroke="var(--gold-light)" stroke-width="1.5"/>
+              <circle cx="14" cy="84" r="3.2" fill="none" stroke="var(--gold-light)" stroke-width="1" opacity="0.6"/>
+            </g>
+            <g class="bg-neckhead">
+              <path class="bg-neck" d="M74 68 Q82 50 74 36 Q84 38 78 24" fill="none" stroke="var(--gold-light)" stroke-width="9" stroke-linecap="round"/>
+              <circle class="bg-head" cx="78" cy="22" r="8" fill="var(--gold-light)" stroke="#171310" stroke-width="2"/>
+              <path class="bg-beak" d="M85 19 L98 15 L88 27 Z" fill="var(--orange)" stroke="#171310" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle class="bg-eye" cx="80" cy="20" r="1.8" fill="#171310"/>
+              <g class="bg-visor">
+                <path d="M71 13 Q79 6 88 13 L88 16.5 L71 16.5 Z" fill="#171310" stroke="var(--orange)" stroke-width="1.5"/>
+              </g>
+            </g>
+          </svg>
+        </div>
         <h3>Бонус дилера</h3>
         <div class="bonus-reward">Вход + 5к каждые 2ч</div>
         <p>Умеешь и хочешь раздавать? Получаешь бесплатный повторный вход каждые 2 часа и +5000 к стартовому стэку.</p>
@@ -465,6 +620,12 @@
     </div>
   </div>
 </section>
+
+<div class="section-divider" aria-hidden="true">
+  <span class="divider-line"></span>
+  <svg class="divider-feather" viewBox="0 0 24 24"><path d="M12 2 C 8 6, 6 12, 6 18 C 6 20, 8 22, 10 21 C 9 19, 9 16, 10 14 M6 18 L2 22 M8 15 L4 17 M10 11 L6 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+  <span class="divider-line"></span>
+</div>
 
 <!-- RATING -->
 <section id="rating">
@@ -478,138 +639,69 @@
       <div class="rating-info reveal">
         <div class="ri-card">
           <div class="ri-item">
-            <span class="ri-icon">📊</span>
             <div>
               <strong>Как считается</strong>
               <p>100% рейтинговых очков за каждый турнир. Итоговое место определяет количество очков. В нокаут-форматах — дополнительные очки за каждый нокаут.</p>
             </div>
           </div>
           <div class="ri-item">
-            <span class="ri-icon">⚡</span>
             <div>
               <strong>Goose Battery</strong>
               <p>Воскресный мейн-ивент даёт ×2 к рейтингу. Победитель дополнительно получает 3 бесплатных входа на будущие турниры.</p>
             </div>
           </div>
           <div class="ri-item">
-            <span class="ri-icon">🎯</span>
             <div>
               <strong>Нокаут-бонусы</strong>
               <p>GOOSE HUNTER: +50 очков за нокаут. +100 очков за нокаут после поздней регистрации.</p>
             </div>
           </div>
           <a href="https://docs.google.com/spreadsheets/d/1QBpeFepOObPwMPWRxzp9ABO9STnwL7jARgJr5oua-fk/edit" target="_blank" class="btn-primary" style="margin-top:1.5rem; display:inline-flex;">
-            📊 Открыть таблицу рейтинга
+            Открыть таблицу рейтинга
           </a>
         </div>
       </div>
       <div class="monthly-champ reveal">
         <div class="mc-card">
-          <div class="mc-crown">🏆</div>
+          <div class="goose-cup" aria-label="Кубок чемпиона месяца">
+            <div class="glow"></div>
+            <span class="spk s1">✦</span><span class="spk s2">✦</span><span class="spk s3">✦</span>
+            <svg class="cup" viewBox="0 0 200 240" role="img">
+              <defs>
+                <linearGradient id="cup-gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7D465"/><stop offset=".5" stop-color="#D4A017"/><stop offset="1" stop-color="#9c7208"/></linearGradient>
+                <linearGradient id="cup-gAd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D4A017"/><stop offset="1" stop-color="#7d5c06"/></linearGradient>
+                <clipPath id="cup-bowlClip"><path d="M58 62 h84 v20 a42 50 0 0 1 -84 0 z"/></clipPath>
+              </defs>
+              <rect x="64" y="178" width="72" height="14" rx="4" fill="url(#cup-gAd)"/>
+              <rect x="80" y="162" width="40" height="18" rx="2" fill="url(#cup-gA)"/>
+              <rect x="92" y="132" width="16" height="32" fill="url(#cup-gAd)"/>
+              <path d="M56 66 q-30 2 -26 32 q3 20 26 20 v-12 q-14 0 -15 -12 q-1 -12 15 -14 z" fill="url(#cup-gA)"/>
+              <path d="M144 66 q30 2 26 32 q-3 20 -26 20 v-12 q14 0 15 -12 q1 -12 -15 -14 z" fill="url(#cup-gA)"/>
+              <path d="M58 62 h84 v20 a42 50 0 0 1 -84 0 z" fill="url(#cup-gA)"/>
+              <ellipse cx="100" cy="62" rx="43" ry="11" fill="#F7D465"/>
+              <ellipse cx="100" cy="62" rx="34" ry="8" fill="#b98d10"/>
+              <path d="M70 60 q30 14 60 0 q-8 34 -30 40 q-22 -6 -30 -40 z" fill="rgba(255,255,255,0.12)"/>
+              <g transform="translate(66,62) scale(0.68)" fill="none" stroke="#3a2a05" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 66 C20 53 34 45 49 47 C61 49 67 58 64 67 C61 74 52 76 45 73"/>
+                <path d="M24 66 C18 63 15 68 20 71"/>
+                <path d="M60 49 C62 37 64 29 73 26 C79 24 82 30 80 33 C78 36 74 37 71 34"/>
+                <path d="M80 31 l9 -2 -7 6 z" fill="#3a2a05" stroke="none"/>
+                <circle cx="74" cy="31" r="1.8" fill="#3a2a05" stroke="none"/>
+              </g>
+              <g clip-path="url(#cup-bowlClip)"><rect class="shine" x="40" y="55" width="26" height="60" fill="#fff" transform="skewX(-18)"/></g>
+            </svg>
+          </div>
           <h3>Чемпионат месяца</h3>
           <p class="mc-desc">В конце каждого месяца топ-30 игроков рейтинговой таблицы встречаются в финальном турнире.</p>
           <div class="mc-list">
-            <div class="mc-item"><span>👥</span> Топ-30 по рейтингу за месяц</div>
-            <div class="mc-item"><span>📅</span> Раз в месяц, ближе к концу</div>
-            <div class="mc-item"><span>🥇</span> Звание чемпиона месяца</div>
-            <div class="mc-item"><span>🎁</span> Специальные призы победителю</div>
-            <div class="mc-item"><span>🦆</span> Попасть может любой — накапливай очки</div>
+            <div class="mc-item">Топ-30 по рейтингу за месяц</div>
+            <div class="mc-item">Раз в месяц, ближе к концу</div>
+            <div class="mc-item">Звание чемпиона месяца</div>
+            <div class="mc-item">Специальные призы победителю</div>
+            <div class="mc-item">Попасть может любой — накапливай очки</div>
           </div>
           <div class="mc-cta">Войди в топ-30 таблицы!</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STICKERS -->
-<section id="features">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Фишки клуба</span>
-      <h2>Фирменные<br/><em>стикеры GOOSE</em></h2>
-      <p>Часть культуры клуба. Получи стикер — прими вызов.</p>
-    </div>
-    <div class="stickers-grid">
-      <div class="sticker-card reveal">
-        <div class="sticker-visual sticker-red">
-          <span class="sticker-g">G</span>
-          <strong>ГНИДА</strong>
-        </div>
-        <h3>Гнида</h3>
-        <p>Сложил руку там, где все ждали блефа? Поздравляем — ты нит. Осторожность тоже стратегия, хотя и скучная.</p>
-        <div class="sticker-rule">Получи — значит тебя заметили</div>
-      </div>
-      <div class="sticker-card reveal">
-        <div class="sticker-visual sticker-orange">
-          <span class="sticker-g">G</span>
-          <strong>ПОКАЖИ<br/>КАРТУ</strong>
-        </div>
-        <h3>Покажи карту</h3>
-        <p>Сорвал банк без вскрытия? Зал требует шоу. Покажи что было — стань героем или злодеем вечера.</p>
-        <div class="sticker-rule">Покажи — и стань легендой стола</div>
-      </div>
-      <div class="sticker-card reveal">
-        <div class="sticker-visual sticker-green">
-          <span class="sticker-g">G</span>
-          <strong>КРУТИТЬ<br/>ДВАЖДЫ</strong>
-        </div>
-        <h3>Крутить дважды</h3>
-        <p>Ол-ин и рансаут — два раза. Удача на твоей стороне? Проверим.</p>
-        <div class="sticker-rule">Используй в самый нужный момент</div>
-      </div>
-    </div>
-
-    <div class="sticker-game reveal">
-      <h3>🎲 Какой стикер ты получишь сегодня?</h3>
-      <p>Нажми на карту — узнай</p>
-      <div class="game-card" id="stickerGame">
-        <div class="game-card-inner">
-          <div class="game-card-front">
-            <span class="card-question">?</span>
-            <span class="card-hint">Нажми чтобы открыть</span>
-          </div>
-          <div class="game-card-back">
-            <span class="result-icon">🎰</span>
-            <span class="result-text"></span>
-          </div>
-        </div>
-      </div>
-      <button class="btn-ghost" id="stickerBtn" style="margin-top:1.5rem">Ещё раз!</button>
-    </div>
-  </div>
-</section>
-
-<!-- POKER GAME -->
-<section id="table-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Интерактив</span>
-      <h2>Раздай себе<br/><em>карты</em></h2>
-      <p>5 общих карт + 2 твои. Смотри что получилось.</p>
-    </div>
-    <div class="poker-table reveal">
-      <div class="table-felt">
-        <div class="community-label">Общие карты (борд)</div>
-        <div class="community-cards" id="communityCards">
-          <div class="table-card-slot"></div>
-          <div class="table-card-slot"></div>
-          <div class="table-card-slot"></div>
-          <div class="table-card-slot"></div>
-          <div class="table-card-slot"></div>
-        </div>
-        <div class="your-hand" id="yourHand">
-          <label>Твои карты (холдем):</label>
-          <div class="hand-cards">
-            <div class="table-card-slot hand-slot"></div>
-            <div class="table-card-slot hand-slot"></div>
-          </div>
-        </div>
-        <div class="table-result" id="tableResult"></div>
-      </div>
-      <div class="table-controls">
-        <button class="btn-primary" id="dealBtn">🃏 Сдать карты</button>
-        <button class="btn-ghost" id="resetBtn" style="display:none">Новая раздача</button>
       </div>
     </div>
   </div>
@@ -624,13 +716,13 @@
       <p>Живые фото и видео с турниров — так выглядит настоящий GOOSE.</p>
     </div>
 
+    <div class="gallery-pin">
     <div class="atm-grid reveal">
       <!-- ФОТО 1: сохрани первое фото из чата как media/photo-gnida.jpg -->
       <div class="atm-item atm-tall">
         <img src="media/photo-gnida.jpg.jpg" class="atm-photo" alt="Игрок GOOSE со стикером Гнида"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
         <div class="atm-placeholder" style="display:none">
-          <div class="atm-placeholder-icon">📸</div>
           <div class="atm-placeholder-label">Сохрани первое фото<br/>как media/photo-gnida.jpg</div>
         </div>
         <div class="atm-caption"><span>Стикер «Гнида» — носится с гордостью</span></div>
@@ -640,7 +732,6 @@
         <img src="media/photo-stickers.jpg.jpg" class="atm-photo" alt="Стикеры GOOSE на сукне"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
         <div class="atm-placeholder" style="display:none">
-          <div class="atm-placeholder-icon">🏷️</div>
           <div class="atm-placeholder-label">Сохрани второе фото<br/>как media/photo-stickers.jpg</div>
         </div>
         <div class="atm-caption"><span>Фирменные стикеры клуба</span></div>
@@ -662,37 +753,20 @@
       <!-- Слот под дополнительное фото -->
       <div class="atm-item">
         <div class="atm-placeholder">
-          <div class="atm-placeholder-icon">➕</div>
           <div class="atm-placeholder-label">Можно добавить<br/>ещё фото или видео</div>
         </div>
         <div class="atm-caption"><span>GOOSE Poker Club</span></div>
       </div>
     </div>
+    </div>
 
     <div class="tg-block reveal">
-      <div class="tg-icon">✈️</div>
       <div class="tg-text">
         <h3>Все фото и видео — в Telegram</h3>
         <p>Репортажи с турниров, бэкстейдж, анонсы и живые моменты — подписывайся на канал чтобы ничего не пропустить.</p>
       </div>
       <a href="https://t.me/goosepoker" target="_blank" class="tg-btn">Открыть канал →</a>
     </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta-banner">
-  <div class="cta-content reveal">
-    <h2>Хватит читать —<br/><em>иди играть</em></h2>
-    <p>Запись у администратора. Ответит быстро.</p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="https://t.me/goosespb_admin" target="_blank" class="btn-primary btn-large">Записаться через Telegram</a>
-      <a href="https://t.me/goosepoker" target="_blank" class="btn-ghost btn-large">Наш канал</a>
-    </div>
-  </div>
-  <div class="cta-cards">
-    <div class="cta-card cc1">A♠</div>
-    <div class="cta-card cc2">A♥</div>
   </div>
 </section>
 
@@ -706,43 +780,38 @@
     <div class="contact-grid">
       <div class="contact-info reveal">
         <div class="ci-item">
-          <span class="ci-icon">📍</span>
           <div>
             <strong>Адрес</strong>
             <span>М. Площадь Ленина, Боткинская ул. 3к1, ТК ТуКан, 2 этаж</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">🚇</span>
           <div>
             <strong>Как добраться</strong>
             <span>Отдельный вход со стороны метро, или центральный вход — на эскалаторе, до конца по коридору</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">🚗</span>
           <div>
             <strong>Парковка</strong>
             <span>Бесплатная, нет платных зон — просто оставляй машину</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">⏰</span>
           <div>
             <strong>Режим работы</strong>
             <span>Пн–Пт: 19:00 (сбор с 18:30)<br/>Сб–Вс: 17:00 (сбор с 16:30)</span>
           </div>
         </div>
         <div class="ci-item">
-          <span class="ci-icon">✍️</span>
           <div>
             <strong>Запись на турнир</strong>
             <span>@goosespb_admin — ответит в течение дня</span>
           </div>
         </div>
         <div class="social-links">
-          <a href="https://t.me/goosepoker" target="_blank" class="social-btn">📢 Telegram канал</a>
-          <a href="https://t.me/goosespb_admin" target="_blank" class="social-btn">✍️ Записаться</a>
+          <a href="https://t.me/goosepoker" target="_blank" class="social-btn">Telegram канал</a>
+          <a href="https://t.me/goosespb_admin" target="_blank" class="social-btn">Записаться</a>
         </div>
       </div>
       <div class="contact-form reveal">
@@ -760,12 +829,12 @@
           <div class="form-group">
             <label>На какой турнир хочешь?</label>
             <select>
-              <option>🃏 GOOSE CLASSIC (Пн / Ср)</option>
-              <option>💥 GOOSE HUNTER (Вт)</option>
-              <option>🎁 MYSTERY BOUNTY (Чт)</option>
-              <option>♠️ GOOSE DEEPSTACK (Пт)</option>
-              <option>🎯 WIN THE BUTTON (Сб)</option>
-              <option>⚡ GOOSE BATTERY (Вс)</option>
+              <option>GOOSE CLASSIC (Пн / Ср)</option>
+              <option>GOOSE HUNTER (Вт)</option>
+              <option>MYSTERY BOUNTY (Чт)</option>
+              <option>GOOSE DEEPSTACK (Пт)</option>
+              <option>WIN THE BUTTON (Сб)</option>
+              <option>GOOSE BATTERY (Вс)</option>
               <option>Просто хочу прийти — выберу на месте</option>
             </select>
           </div>
@@ -780,7 +849,6 @@
           <button type="submit" class="btn-primary w-full">Отправить заявку</button>
         </form>
         <div class="form-success" id="formSuccess" style="display:none">
-          <span>🎉</span>
           <h4>Заявка отправлена!</h4>
           <p>Напишем в Telegram в ближайшее время. До встречи за столом!</p>
         </div>
@@ -795,10 +863,12 @@
       <svg class="footer-goose-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="50" fill="#F5820A"/>
         <path d="M50 12 C28 12 14 28 14 50 C14 72 28 88 50 88 C60 88 68 84 74 78 L74 54 L52 54 L52 64 L63 64 C60 70 55 73 50 73 C34 73 28 62 28 50 C28 38 36 27 50 27 C57 27 63 30 67 35 L78 25 C71 17 61 12 50 12Z" fill="white"/>
-        <ellipse cx="72" cy="22" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
-        <path d="M80 20 L92 18 L90 24 L80 24Z" fill="#F5820A" stroke="#1a1a1a" stroke-width="1.5"/>
-        <circle cx="74" cy="20" r="2" fill="#1a1a1a"/>
-        <path d="M65 28 C67 22 70 18 72 14 C74 10 80 8 82 14 C79 16 76 20 74 26 C72 30 68 32 65 28Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+        <g class="goose-head">
+          <ellipse cx="72" cy="22" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M80 20 L92 18 L90 24 L80 24Z" fill="#F5820A" stroke="#1a1a1a" stroke-width="1.5"/>
+          <circle class="logo-eye" cx="74" cy="20" r="2" fill="#1a1a1a"/>
+          <path d="M65 28 C67 22 70 18 72 14 C74 10 80 8 82 14 C79 16 76 20 74 26 C72 30 68 32 65 28Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+        </g>
       </svg>
       GOOSE POKER CLUB
     </div>
@@ -816,6 +886,9 @@
 
 <button class="back-to-top" id="backToTop">↑</button>
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
